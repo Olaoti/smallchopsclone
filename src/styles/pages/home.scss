@@ -1,0 +1,66 @@
+.home{
+    .landing{
+        min-height: 100vh;
+    }
+    &__header{
+        .blurhomebg{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+            img{
+                height: 15vw;
+                object-fit: cover;
+                position: absolute;
+                &.blurleafimg{
+                    left: 0;
+                    top: 70vh;
+                    z-index: 1;
+                }
+                &.blurpuffimg{
+                    right:15vw;
+                    top: 65vh;
+                    height: 12vw;
+                }
+                &.blursamosaimg{
+                    left:15vw;
+                    top: 35vh;
+                }
+                &.blurchickenimg{
+                    right:-5vw;
+                    top: 65vh;
+                    height: 12vw;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:700px){
+    .home{
+        &__header{
+            .blurhomebg{
+                img{
+                    height: 8.4rem;
+                    &.blurpuffimg{
+                        height: 8rem;
+                        top: 50vh;
+                    }
+                    &.blurleafimg{
+                        top: 35vh;
+                    }
+                    &.blursamosaimg{
+                        left:15vw;
+                        top: 16vh;
+                    }
+                    &.blurchickenimg{
+                        height: 7rem;
+                        top: 35vh;
+                    }
+                }
+            }
+        }
+    }
+}
