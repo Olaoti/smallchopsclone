@@ -9,16 +9,16 @@
             width: 100%;
             top: 0;
             left: 0;
-            z-index: 0;
+            z-index: -1;
             overflow: hidden;
             img{
                 height: 15vw;
                 object-fit: cover;
                 position: absolute;
+                z-index: 0;
                 &.blurleafimg{
                     left: 0;
                     top: 70vh;
-                    z-index: 1;
                 }
                 &.blurpuffimg{
                     right:15vw;

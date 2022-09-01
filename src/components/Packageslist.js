@@ -5,6 +5,14 @@ import withlove from "../Assets/packagesimg/withlove.png";
 import withlovesm from "../Assets/packagesimg/withlovesm.png";
 import contentbox from "../Assets/packagesimg/contentbox.png";
 import rolls from "../Assets/packagesimg/rolls.png";
+import springrolls from "../Assets/packagesimg/springrolls.png";
+import puff from "../Assets/packagesimg/puff.png";
+import samosa from "../Assets/packagesimg/samosa.png";
+import gizzard from "../Assets/packagesimg/gizzard.png";
+import fish from "../Assets/packagesimg/fish.png";
+import mosa from "../Assets/packagesimg/mosa.png";
+import prawn from "../Assets/packagesimg/prawn.png";
+import corndogs from "../Assets/packagesimg/corndogs.png";
 
 const Packageslist = [
   {
@@ -13,12 +21,32 @@ const Packageslist = [
     treatimg: standard,
     pimg: treatbox,
     price: 5500,
-    puff: 15,
-    beef: 4,
-    bbq: 4,
-    gizzard: 4,
-    mosa: 10,
-    springrolls: 4,
+    content: [
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 30,
+      },
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 20,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 10,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 10,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 10,
+      },
+    ],
   },
   {
     id: 2,
@@ -26,205 +54,606 @@ const Packageslist = [
     treatimg: deluxe,
     pimg: treatbox,
     price: 8000,
-    puff: 15,
-    beef: 6,
-    corndogs: 4,
-    fish: 2,
-    stickmeat: 4,
-    gizzard: 4,
-    mosa: 10,
-    springrolls: 6,
+    content: [
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 10,
+      },
+      {
+        cname: "corn dogs",
+        img: corndogs,
+        pieces: 4,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 15,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 6,
+      },
+      {
+        cname: "Peppered Gizzard",
+        img: gizzard,
+        pieces: 4,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 6,
+      },
+      {
+        cname: "stick meat",
+        pieces: 4,
+      },
+      {
+        cname: "fish in batter",
+        img: fish,
+        pieces: 2,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 5,
+      },
+    ],
   },
   {
     id: 3,
     pname: "deluxe seafood platter",
     pimg: withlove,
     price: 10000,
-    puff: 20,
-    croaker: 1,
-    prawn: 2,
-    corn: 3,
+    content: [
+      {
+        cname: "puff puff",
+        img: puff,
+        pieces: 20,
+      },
+      {
+        cname: "Grilled Croaker (Full)",
+        pieces: 1,
+      },
+      {
+        cname: "Grilled Corn",
+        pieces: 3,
+      },
+      {
+        cname: "Grilled Prawn Kebab",
+        pieces: 2,
+      },
+    ],
   },
   {
     id: 4,
     pname: "standard tray",
     pimg: contentbox,
     price: 10000,
-    puff: 30,
-    beef: 10,
-    chickencut: 10,
-    mosa: 20,
-    springrolls: 10,
+    content: [
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 30,
+      },
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 20,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 10,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 6,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 10,
+      },
+    ],
   },
   {
     id: 5,
     pname: "midi tray",
     pimg: contentbox,
     price: 12500,
-    puff: 30,
-    beef: 12,
-    stickmeat: 4,
-    gizzard: 6,
-    mosa: 20,
-    chickencut: 12,
-    springrolls: 12,
+    content: [
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 30,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 12,
+      },
+      {
+        cname: "Peppered Gizzard",
+        img: gizzard,
+        pieces: 6,
+      },
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 20,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 12,
+      },
+      {
+        cname: "stick meat",
+        pieces: 4,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 12,
+      },
+    ],
   },
   {
     id: 6,
     pname: "deluxe tray",
     pimg: contentbox,
     price: 15000,
-    puff: 30,
-    chickencut: 12,
-    beef: 12,
-    corndogs: 6,
-    gizzard: 10,
-    mosa: 20,
-    springrolls: 12,
-    sausage: 6,
+    content: [
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 20,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 30,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 12,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 12,
+      },
+      {
+        cname: "Peppered Gizzard",
+        img: gizzard,
+        pieces: 10,
+      },
+      {
+        cname: "corn dogs",
+        img: corndogs,
+        pieces: 6,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 12,
+      },
+      {
+        cname: "Grilled Sausage (Half)",
+        pieces: 6,
+      },
+    ],
   },
   {
     id: 7,
     pname: "spring roll mini pack",
     pimg: withlovesm,
     price: 500,
-    springrolls: 1,
-    puff: 4,
-    stickmeat: 1,
+    content: [
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 1,
+      },
+      {
+        cname: "stick meat",
+        pieces: 1,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 4,
+      },
+    ],
   },
   {
     id: 8,
     pname: "samosa mini pack",
     pimg: withlovesm,
     price: 500,
-    beef: 1,
-    puff: 4,
-    stickmeat: 1,
+    content: [
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 1,
+      },
+      {
+        cname: "stick meat",
+        pieces: 1,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 4,
+      },
+    ],
   },
   {
     id: 9,
     pname: "everybody pack",
     pimg: withlovesm,
     price: 950,
-    beef: 1,
-    puff: 4,
-    springrolls: 1,
-    mosa: 3,
-    chickencut: 1,
+    content: [
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 4,
+      },
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 3,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 1,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 1,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 12,
+      },
+    ],
   },
   {
     id: 10,
     pname: "Treat pack",
     pimg: withlovesm,
     price: 1500,
-    beef: 1,
-    puff: 5,
-    springrolls: 2,
-    mosa: 3,
-    corndogs: 1,
-    stickmeat: 1,
-    chickencut: 1,
+    content: [
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 5,
+      },
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 3,
+      },
+      {
+        cname: "corn dogs",
+        img: corndogs,
+        pieces: 1,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 2,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 1,
+      },
+      {
+        cname: "stick meat",
+        pieces: 1,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 11,
     pname: "urgent 2k pack",
     pimg: withlovesm,
     price: 2000,
-    puff: 5,
-    chickencut: 1,
-    beef: 1,
-    corndogs: 1,
-    gizzard: 1,
-    mosa: 3,
-    springrolls: 2,
-    sausage: 1,
-    stickmeat: 1,
+    content: [
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 3,
+      },
+      {
+        cname: "corn dogs",
+        img: corndogs,
+        pieces: 1,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 5,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 2,
+      },
+      {
+        cname: "Peppered Gizzard",
+        img: gizzard,
+        pieces: 1,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 1,
+      },
+      {
+        cname: "stick meat",
+        pieces: 1,
+      },
+      {
+        cname: "Grilled Sausage (Half)",
+        pieces: 1,
+      },
+      {
+        cname: "grilled chicken cut",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 12,
     pname: "Raw Vegetable Spring Rolls",
     pimg: rolls,
     price: 2250,
-    springrolls: 12,
+    content: [
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 12,
+      },
+    ],
   },
   {
     id: 13,
     pname: "Raw beef samosas",
     pimg: rolls,
     price: 2250,
-    beef: 12,
+    content: [
+      {
+        cname: " Beef Samosas",
+        img: samosa,
+        pieces: 12,
+      },
+    ],
   },
   {
     id: 14,
     pname: "Turkey Wing and Fries",
     pimg: withlovesm,
     price: 3000,
-    bbq: 1,
-    fries: 1,
+    content: [
+      {
+        cname: "BBQ Turkey (Large)",
+        pieces: 1,
+      },
+      {
+        cname: "French Fries (Large)",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 15,
     pname: "akanna pack",
     pimg: withlovesm,
     price: 3000,
-    puff: 7,
-    beef: 2,
-    corndogs: 1,
-    bbq: 1,
-    stickmeat: 1,
-    prawn: 1,
-    mosa: 5,
-    springrolls: 2,
+    content: [
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 5,
+      },
+      {
+        cname: "corn dogs",
+        img: corndogs,
+        pieces: 1,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 7,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 2,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 2,
+      },
+      {
+        cname: "stick meat",
+        pieces: 1,
+      },
+      {
+        cname: "BBQ Chicken Cut (Medium)",
+        pieces: 1,
+      },
+      {
+        cname: "Grilled Prawn Kebab",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 16,
     pname: "Turkey Wing and Yam Fries",
     pimg: withlovesm,
     price: 3000,
-    turkeybbq: 1,
-    yamfries: 1,
+    content: [
+      {
+        cname: "BBQ Turkey (Large)",
+        pieces: 1,
+      },
+      {
+        cname: "Yam Fries and Pepper Sauce",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 17,
     pname: "Full Chicken Lap and Yam Fries",
     pimg: withlovesm,
     price: 3500,
-    bbq: 1,
-    fries: 1,
+    content: [
+      {
+        cname: " BBQ Chicken Cut (Full Lap)",
+        pieces: 1,
+      },
+      {
+        cname: "Yam Fries and Pepper Sauce",
+        pieces: 1,
+      },
+      {
+        cname: " BBQ Chicken (Full Lap)",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 18,
-    pname: "Standard Seafood Platter",
-    pimg: withlove,
-    price: 5000,
-    puff: 10,
-    batterfish: 2,
-    corn: 2,
-    prawn: 1,
+    pname: "Full Chicken Lap and Chips",
+    pimg: withlovesm,
+    price: 3500,
+    content: [
+      {
+        cname: " BBQ Chicken Cut (Full Lap)",
+        pieces: 1,
+      },
+      {
+        cname: "French Fries (large)",
+        pieces: 1,
+      },
+      {
+        cname: " BBQ Chicken (Full Lap)",
+        pieces: 1,
+      },
+    ],
   },
   {
     id: 19,
-    pname: "midi treatbox",
-    pimg: treatbox,
-    price: 6500,
-    puff: 15,
-    beef: 4,
-    corndogs: 4,
-    bbq: 4,
-    stickmeat: 4,
-    gizzard: 2,
-    mosa: 10,
-    springrolls: 4,
+    pname: "Standard Seafood Platter",
+    pimg: withlove,
+    price: 5000,
+    content: [
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 10,
+      },
+      {
+        cname: "Grilled Prawn Kebab",
+        pieces: 1,
+      },
+      {
+        cname: "Fish In Batter",
+        pieces: 3,
+      },
+      {
+        cname: "Grilled Corn",
+        pieces: 2,
+      },
+    ],
   },
   {
     id: 20,
-    pname: "Raw beef samosas",
+    pname: "midi treatbox",
+    pimg: treatbox,
+    price: 6500,
+    content: [
+      {
+        cname: "Mosa",
+        img: mosa,
+        pieces: 10,
+      },
+      {
+        cname: "corn dogs",
+        img: corndogs,
+        pieces: 4,
+      },
+      {
+        cname: "Puff puff",
+        img: puff,
+        pieces: 15,
+      },
+      {
+        cname: "Vegetable Spring Rolls",
+        img: springrolls,
+        pieces: 4,
+      },
+      {
+        cname: "Peppered Gizzard",
+        img: gizzard,
+        pieces: 2,
+      },
+      {
+        cname: "beef samosas",
+        img: samosa,
+        pieces: 4,
+      },
+      {
+        cname: "stick meat",
+        pieces: 4,
+      },
+      {
+        cname: "BBQ Chicken Cut (Medium)",
+        pieces: 4,
+      },
+    ],
+  },
+  {
+    id: 21,
+    pname: "Raw Shrimp Rolls",
     pimg: rolls,
     price: 5500,
-    prawn: 12,
+    content: [
+      {
+        cname: "Prawn Rolls (x5)",
+        img: prawn,
+        pieces: 12,
+      },
+    ],
+  },
+  {
+    id: 22,
+    pname: "Full Grilled Croaker and Yam Chips",
+    pimg: withlovesm,
+    price: 6000,
+    content: [
+      {
+        cname: "Grilled Croaker (Full)",
+        pieces: 1,
+      },
+      {
+        cname: "Yam Fries and Pepper Sauce",
+        pieces: 1,
+      },
+    ],
   },
 ];
-
-console.log(Packageslist);
 
 export default Packageslist;

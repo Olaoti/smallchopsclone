@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../Assets/logo.svg";
 import cart from "../Assets/cart-icon-brown.svg";
 import logowhite from "../Assets/logowhite.svg";
@@ -53,7 +54,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar__links">
-          <div>Our Packages</div>
+          <Link className="link" to="/packages">
+            <div className="packageslink">Our Packages</div>
+          </Link>
           <div>
             Build your <span className="desktop">own</span> pack
           </div>
