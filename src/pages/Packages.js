@@ -1,25 +1,70 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import Navbar from "../components/Navbar";
 import Packageslist from "../components/Packageslist";
 import cartwhite from "../Assets/cart-icon-white.svg";
-
+import arrow from "../Assets/right-arrow-brown.svg";
+import Packagebackground from "../components/Packagebackground";
 const Packages = () => {
+  const [number, setNumber] = useState(0);
+  const addnumber = () => {
+    if (number < Packageslist.length - 1) {
+      setNumber(number + 1);
+    } else if (number == Packageslist.length - 1) {
+      setNumber(0);
+    }
+  };
+  const subtractnumber = () => {
+    if (number == 0) {
+      setNumber(Packageslist.length - 1);
+    } else {
+      setNumber(number - 1);
+    }
+  };
+
+  const imageRef = useRef(null);
+  useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1 }
+    );
+  }, [imageRef, number]);
+
   return (
     <div className="packages">
       <Navbar />
+      <div className="arrows">
+        <div className="arrows-section">
+          <div className="arrow" onClick={addnumber}>
+            <img src={arrow} alt="" />
+          </div>
+          <div className="arrow" onClick={subtractnumber}>
+            <img src={arrow} alt="" />
+          </div>
+        </div>
+      </div>
       <div className="packages__box">
         <div className="packages__box__description">
+          <div className="packagebackground">
+            <Packagebackground />
+          </div>
           <div className="question">
             What Package Do You Feel Like Enjoying Today?
           </div>
-          <div className="package-name head">{Packageslist[1].pname}</div>
+          <div className="package-name head">{Packageslist[number]?.pname}</div>
           <div className="package-image">
-            <img src={Packageslist[1].pimg} alt="" className="pimg" />
+            <img
+              src={Packageslist[number]?.pimg}
+              alt=""
+              className="pimg"
+              ref={imageRef}
+            />
           </div>
           <div className="details-box">
             <div className="price-section">
               <div className="price">
-                ₦ {Packageslist[1].price}
+                ₦ {Packageslist[number]?.price}
                 <span>per pack</span>
               </div>
             </div>
@@ -30,12 +75,16 @@ const Packages = () => {
               <img src={cartwhite} alt="" />
             </div>
           </div>
+          <div className="drinks-box">
+            <input type="checkbox" name="drink-box" className="checkbox" /> I
+            want drinks with my Order
+          </div>
         </div>
         <div className="packages__box__content">
           <div className="content-section">
             <div className="content-heading head">Content</div>
             <div className="packages-content">
-              {Packageslist[1]?.content.map((content) => {
+              {Packageslist[number]?.content.map((content) => {
                 return (
                   <div className="each-content">
                     <div className="content-img">

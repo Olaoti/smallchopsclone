@@ -33,8 +33,9 @@ body {
   border-radius: 4rem;
   background-color: $color-brown-light;
   color: white;
-  &__hover{
-    background-color: $color-glow-green
+  cursor: pointer;
+  &:hover{
+    background-color: $color-glow-green;
   }
 }
 @import "./styles/components/navbar.scss";
@@ -42,6 +43,8 @@ body {
 @import "./styles/components/special.scss";
 @import "./styles/components/followus.scss";
 @import "./styles/components/treat.scss";
-@import "./styles/pages/packages.scss";
+@import "./styles/components/packagesbg.scss";
 
 @import "./styles/pages/home.scss";
+@import "./styles/pages/packages.scss";
+
