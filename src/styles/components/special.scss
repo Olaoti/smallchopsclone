@@ -1,5 +1,4 @@
 .special{
-    background-color: $color-brown-bg;
     display: flex;
     width: 100%;
     .followsection{
@@ -13,8 +12,8 @@
             width: 100%;
             grid-template-columns: 2fr 3fr;
             &__texts{
-                padding: 0 4rem 1vh 0;
-                .head{
+                padding: 0 5rem 1vh 0;
+                .heading{
                     padding-top: 20vh;
                     font-size: 7rem;
                     font-weight: 500;
@@ -91,15 +90,17 @@
         }
         &__treat{
             &__head{
-                padding: 2rem 0 0;
+                padding: 2rem 10% 0 0;
                 display: flex;
                 width: 100%;
                 align-items: center;
-                .heading{
+                .head{
                     font-size: 2.4rem;
+                    line-height: 2.6rem;
                     text-transform: uppercase;
                     margin-right: 8px;
                     width: max-content;  
+                    color: black;
                     div{
                         width: max-content;
                     }
@@ -119,7 +120,7 @@
             &__main-contents{
                 &__texts{
                     padding: 0 1rem 1vh 0;
-                    .head{
+                    .heading{
                         font-size: 6rem;
                         line-height: 7.2rem;
                     }
@@ -136,7 +137,7 @@
         &__contents{
             &__main-contents{
                 &__texts{
-                    .head{
+                    .heading{
                         padding-top: 10vh;
                         font-size: 5rem;
                         line-height: 6rem;
@@ -154,7 +155,9 @@
             }
             &__treat{
                 &__head{
-                    .heading{
+                    padding: 2rem 8% 0 0;
+                    .head{
+                        padding-left: 2rem;
                         font-size: 2rem;
                     }
                     .line{
@@ -174,7 +177,8 @@
             width: 88vw;
             &__main-contents{
                 &__texts{
-                    .head{
+                    padding: 2rem 6% 0 0;
+                    .heading{
                         font-size: 4.4rem;
                         line-height: 5.2rem;
                     }
@@ -206,7 +210,7 @@
                 height: 100%;
                 &__texts{
                     padding: 1rem 20% 0 10%;
-                    .head{
+                    .heading{
                         font-size: 5rem;
                         line-height: 6rem;
                     }
@@ -232,7 +236,7 @@
             &__main-contents{
                 &__texts{
                     padding: 1rem 10% 0 8%;
-                    .head{
+                    .heading{
                         font-size: 4.8rem;
                         line-height: 6rem;
                     }
@@ -255,7 +259,7 @@
             &__main-contents{
                 &__texts{
                     padding: 1rem 3rem 0 2.4rem;
-                    .head{
+                    .heading{
                         font-size: 4.5rem;
                         line-height: 5.4rem;
                     }

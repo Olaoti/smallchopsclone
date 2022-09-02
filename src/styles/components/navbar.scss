@@ -68,14 +68,12 @@
                 font-size: 1.4rem;
                 font-weight: 700;
                 padding: 1.4rem 4rem;
-                background-color: $color-brown-mid;
                 border-radius: 5rem;
                 color: white;
                 transition: all 300ms ease;
                 cursor: pointer;
                 z-index: 18;
                 &:hover{
-                    background-color: $color-glow-green;
                     color: white !important;
                 }
             }

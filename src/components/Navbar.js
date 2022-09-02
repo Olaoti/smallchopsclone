@@ -64,7 +64,7 @@ const Navbar = () => {
           <div>Corporate</div>
           <div>Contact</div>
           <div className="navbar__links__buttons">
-            <div className="navbar__links__buttons__button">Sign in</div>
+            <div className="navbar__links__buttons__button btn">Sign in</div>
             <div className="cart desktop">
               <img
                 src={cart}

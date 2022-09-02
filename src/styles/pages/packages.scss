@@ -22,8 +22,10 @@
             .arrow{
                 padding:1rem 2rem;
                 background-color: rgb(238,231,221);
+                transition: all 300ms ease;
                 &:hover{
-                    background-color: $color-brown-dark
+                    background-color: $color-brown-dark;
+                    transition: all 300ms ease;
                 }
                 img{
                     width: 2rem;
@@ -47,6 +49,12 @@
     .navbar{
         .packageslink{
             color: $color-glow-green;
+        }
+        .btn{
+            background-color: $color-glow-green;
+            &:hover{
+                background-color: $color-brown-light;
+            }
         }
     }
     &::-webkit-scrollbar{
@@ -73,6 +81,7 @@
         }
         &__description{
             width: 100%;
+            padding-bottom: 2rem;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -292,8 +301,7 @@
                 font-size: 1.6rem;
                 font-family: "lexend deca", sans-serif;
                 font-weight: 300;
-            }
-            
+            }    
         }
     }
 }

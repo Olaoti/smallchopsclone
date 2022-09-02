@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useParams, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Packageslist from "../components/Packageslist";
 import cartwhite from "../Assets/cart-icon-white.svg";
@@ -31,6 +32,16 @@ const Packages = () => {
     );
   }, [imageRef, number]);
 
+  const location = useLocation();
+  const { newid } = location.state ? location.state : 0;
+  useEffect(() => {
+    if (newid <= Packageslist.length || newid == 0) {
+      setNumber(newid);
+    } else {
+      setNumber(0);
+    }
+  }, [newid]);
+
   return (
     <div className="packages">
       <Navbar />
@@ -44,7 +55,7 @@ const Packages = () => {
           </div>
         </div>
       </div>
-      <div className="packages__box">
+      <div className="packages__box" id={number}>
         <div className="packages__box__description">
           <div className="packagebackground">
             <Packagebackground />

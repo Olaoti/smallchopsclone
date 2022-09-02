@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Blurhomebg from "../components/Blurhomebg";
 import Special from "../components/Special";
+import Homepackages from "../components/Homepackages";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       </div>
 
       <Special />
+      <Homepackages />
     </div>
   );
 };

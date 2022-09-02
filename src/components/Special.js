@@ -18,7 +18,7 @@ const Special = () => {
       <div className="special__contents">
         <div className="special__contents__main-contents">
           <div className="special__contents__main-contents__texts">
-            <div className="head">
+            <div className="heading">
               Or would you like something particularly <span> special?</span>
             </div>
             <div className="mini-text">
@@ -40,7 +40,7 @@ const Special = () => {
         </div>
         <div className="special__contents__treat">
           <div className="special__contents__treat__head">
-            <div className="heading">
+            <div className="head">
               <div>treat Packages</div>
             </div>
             <div className="line"></div>
