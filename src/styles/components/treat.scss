@@ -53,6 +53,11 @@
     .treats{
        overflow-x: scroll;
        padding-left: 4rem;
+       -ms-overflow-style: none;
+       scrollbar-width: none;
+       &::-webkit-scrollbar{
+        display: none;
+       }
        div{
         width: 35vw;
        }
@@ -72,6 +77,7 @@
         width: 70vw;
         .treatimg{
             aspect-ratio: 4/2.4;
+            max-height: 28rem;
         }
        }
     }

@@ -3,6 +3,11 @@ import Packageslist from "./Packageslist";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
+import samosa from "../Assets/blurbgimages/samosa.png";
+import blursamosa from "../Assets/blurbgimages/blur-samosa.png";
+import springroll from "../Assets/blurbgimages/springroll.png";
+import blurspringroll from "../Assets/blurbgimages/blur-springroll.png";
+
 const Homepackages = () => {
   const packref = useRef(null);
   useEffect(() => {
@@ -11,7 +16,20 @@ const Homepackages = () => {
   return (
     <div className="homepacks">
       <div className="homepacks__top">
-        <div className="homepacks__top__background"></div>
+        <div className="homepacks__top__background">
+          <div>
+            <img src={samosa} alt="" />
+          </div>
+          <div>
+            <img src={blursamosa} alt="" />
+          </div>
+          <div>
+            <img src={springroll} alt="" />
+          </div>
+          <div>
+            <img src={blurspringroll} alt="" />
+          </div>
+        </div>
         <div className="homepacks__top__texts">
           <div className="heading">Choose one of our packages</div>
           <div className="mini-text">

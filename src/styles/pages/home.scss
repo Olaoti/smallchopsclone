@@ -43,6 +43,15 @@
         }
     }
 }
+@media screen and (max-width:900px){
+    .home{
+        .landing{
+            .navbar{
+                padding: 0 0;
+            }
+        }
+    }
+}
 @media screen and (max-width:700px){
     .home{
         &__header{
