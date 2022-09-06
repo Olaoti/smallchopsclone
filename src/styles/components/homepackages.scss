@@ -83,6 +83,7 @@
             img{
                 height: 20vw;
                 min-width:15vw;
+                width: 100%;
                 object-fit: contain;
             }
            }    
@@ -242,6 +243,10 @@
                 width: 100%;
                 padding: 2rem;
                 padding-top: 3vh;
+                .heading{
+                    font-size: 3.8rem;
+                    line-height: 4.5rem;
+                }
             }
         }
         &__packages{
@@ -272,8 +277,8 @@
                 }
                 .packimg{
                     img{
-                        min-width: 28vw;
-                        height: 40vw;
+                        min-width: 30vw;
+                        height: 42vw;
                     }
                 }
             }

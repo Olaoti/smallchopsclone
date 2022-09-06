@@ -39,6 +39,28 @@ body {
   line-height: 150%;
   font-weight: 300 !important;
 }
+.btn{
+  width: fit-content;
+  padding: 1.2rem 3.6rem;
+  border-radius: 4rem;
+  background-color: $color-brown-light;
+  color: white;
+  cursor: pointer;
+  &:hover{
+    background-color: $color-glow-green;
+  }
+}
+.button{
+  width: fit-content;
+  padding: 1.2rem 3.6rem;
+  border-radius: 4rem;
+  background-color: $color-glow-green;
+  color: white;
+  cursor: pointer;
+  &:hover{
+    background-color: $color-brown-light;
+  }
+}
 @media screen and (max-width:1300px) {
   .heading{
     font-size: 6rem;
@@ -66,6 +88,9 @@ body {
   .mini-text{
       font-size: 1.6rem;
   }
+  .btn, .button{
+    padding: .8rem 2.2rem;
+  }
 }
 @media screen and (max-width:400px) {
   .heading{
@@ -76,28 +101,7 @@ body {
       font-size: 1.5rem;
   }
 }
-.btn{
-  width: fit-content;
-  padding: 1.2rem 3.6rem;
-  border-radius: 4rem;
-  background-color: $color-brown-light;
-  color: white;
-  cursor: pointer;
-  &:hover{
-    background-color: $color-glow-green;
-  }
-}
-.button{
-  width: fit-content;
-  padding: 1.2rem 3.6rem;
-  border-radius: 4rem;
-  background-color: $color-glow-green;
-  color: white;
-  cursor: pointer;
-  &:hover{
-    background-color: $color-brown-light;
-  }
-}
+
 @import "./styles/components/navbar.scss";
 @import "./styles/components/header.scss";
 @import "./styles/components/special.scss";

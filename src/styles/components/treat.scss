@@ -77,9 +77,9 @@
         width: 70vw;
         .treatimg{
             aspect-ratio: 4/2.4;
-            max-height: 28rem;
+            max-height: 40vw;
             img{
-            max-height: 28rem;
+            max-height: 40vw;
             }
         }
        }
@@ -89,6 +89,12 @@
     .treats{
        div{
         width: 80vw;
+        .treatimg{
+            max-height: 50vw;
+            img{
+            max-height: 50vw;
+            }
+        }
        }
     }
 }
