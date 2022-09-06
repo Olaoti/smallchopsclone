@@ -78,6 +78,9 @@
         .treatimg{
             aspect-ratio: 4/2.4;
             max-height: 28rem;
+            img{
+            max-height: 28rem;
+            }
         }
        }
     }

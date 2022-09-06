@@ -18,11 +18,11 @@
             flex-direction: column;
             width: fit-content;
             height: fit-content;
-            z-index: 6;
             .arrow{
                 padding:1rem 2rem;
                 background-color: rgb(238,231,221);
                 transition: all 300ms ease;
+                z-index:8 !important;
                 &:hover{
                     background-color: $color-brown-dark;
                     transition: all 300ms ease;
@@ -248,7 +248,7 @@
                             margin: 0 1rem;
                             .line{
                                 height: 100%;
-                                width: 1.5px;
+                                width: 1.6px;
                                 background-color: $color-brown-mid;
                                 display: grid;
                                 place-items: center;
@@ -345,6 +345,7 @@
                 }
                 .drinks-box{
                     font-size: 1.8rem;
+                    margin-left: 2.4rem;
                     .checkbox{
                         width: 1.8rem;
                         height: 1.8rem;
@@ -361,6 +362,192 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:840px){
+    .packages{
+        &__box{
+            &__description{
+                .details-box{
+                    width: 90%;
+                    div{
+                        &.price-section{
+                            .price{
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+                }
+                .drinks-box{
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:760px) {
+    .packages{
+        display: block;
+        height: 100%;
+        overflow-y: scroll;
+        .arrows{
+            display: block;
+            position: static;
+            &-section{
+                display: block;
+                .arrow{
+                    position: fixed;
+                    top: 25vh;
+                    left: 0;
+                    padding: 1rem 1.5rem;
+                    z-index:12 !important;
+                    &:nth-child(1){
+                        left: 0;
+                        border-radius: 0 .8rem .8rem 0;
+                        img{
+                            transform: rotate(180deg);
+                        }
+                    }
+                    &:nth-child(2){
+                        padding: 0;
+                        right: 0;
+                        background-color: transparent;
+                        div{
+                            padding:1rem 2rem;
+                            width: fit-content;
+                            background-color: rgb(238,231,221);
+                            position: absolute;
+                            right: 0;
+                            border-radius: .8rem 0 0 .8rem;
+                            &:hover{
+                                background-color: $color-brown-dark;
+                                transition: all 300ms ease;
+                            }
+                            img{
+                                transform: rotate(0deg);
+                            }
+                        }        
+                    }
+                }
+            }
+        }
+        &__box{
+            display: block;
+            height: 100%;
+            display: block;
+            z-index: 1;
+            &__description{
+                display: block;
+                height: 100%;
+                text-align: center;
+                z-index: 2;
+                .package-image{
+                    img{
+                        max-height: 45vh;
+                    }
+                }
+                .details-box{
+                    width: 50%;
+                    div{
+                        &.sign{
+                            font-size: 5rem;
+                        }
+                        &.plus{
+                            font-size: 4rem;
+                            z-index:12;
+                        }
+                    }
+                }
+            }
+            &__content{
+                .content-section{
+                    z-index: 11;
+                    height: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    .packages{
+        .arrows{
+            &-section{
+                .arrow{
+                    top: 30vh;
+                    padding: .2rem 1rem;
+                    &:nth-child(2){
+                        div{
+                        padding: .2rem 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        &__box{         
+            &__description{
+                .details-box{
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px) {
+    .packages{
+        &__box{
+            &__description{
+                .question{
+                    font-size: 1.5rem;
+                    padding: 3rem;
+                }
+                .details-box{
+                    width: 80%;
+                }
+            }
+            &__content{
+                .content-section{
+                    .packages-content{
+                        grid-template-columns: 1fr;
+                        .each-content{
+                            .content-img{
+                                height: 5rem;
+                                width: 5rem;
+                                img{
+                                    max-width: 5rem;
+                                    max-height: 5rem;
+                                }
+                            }
+                            .content-quantity{
+                                padding: 2.5rem 0;
+                            }
+                            &:nth-child(2){
+                                .line:nth-child(1){
+                                    background-color: $color-brown-mid;
+                                }  
+                            }
+                            &:nth-last-child(2){
+                                .line.bottom{
+                                    background-color: $color-brown-mid;
+                                }  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:410px){
+    .packages{
+        &__box{
+            &__description{
+                .question{
+                    font-size: 1.35rem;
+                    padding: 3rem 2rem;
                 }
             }
         }

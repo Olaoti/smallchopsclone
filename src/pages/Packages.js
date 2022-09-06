@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Packageslist from "../components/Packageslist";
 import cartwhite from "../Assets/cart-icon-white.svg";
@@ -11,12 +11,12 @@ const Packages = () => {
   const addnumber = () => {
     if (number < Packageslist.length - 1) {
       setNumber(number + 1);
-    } else if (number == Packageslist.length - 1) {
+    } else if (number === Packageslist.length - 1) {
       setNumber(0);
     }
   };
   const subtractnumber = () => {
-    if (number == 0) {
+    if (number === 0) {
       setNumber(Packageslist.length - 1);
     } else {
       setNumber(number - 1);
@@ -35,7 +35,7 @@ const Packages = () => {
   const location = useLocation();
   const { newid } = location.state ? location.state : 0;
   useEffect(() => {
-    if (newid <= Packageslist.length || newid == 0) {
+    if (newid <= Packageslist.length || newid === 0) {
       setNumber(newid);
     } else {
       setNumber(0);
@@ -51,7 +51,9 @@ const Packages = () => {
             <img src={arrow} alt="" />
           </div>
           <div className="arrow" onClick={subtractnumber}>
-            <img src={arrow} alt="" />
+            <div>
+              <img src={arrow} alt="" />
+            </div>
           </div>
         </div>
       </div>
