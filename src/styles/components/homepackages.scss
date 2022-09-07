@@ -44,7 +44,7 @@
             padding-top: 25vh;
             text-align: center;
             .mini-text{
-                padding:1rem 2rem 3rem;
+                padding:1rem 5rem 3rem;
             }
         }
     }
@@ -71,7 +71,7 @@
         .pack{
            width: 100%;
            height: 100%;
-           padding-right: 1rem;
+           margin-left: 1rem;
            text-align: center;
            font-size: 1.8rem;
            line-height: 175%;
@@ -79,14 +79,14 @@
            color: $color-brown-mid;
            .packimg{
             width: 100%;
-            height: 100%;
+            height: auto;
             img{
                 height: 20vw;
                 min-width:15vw;
                 width: 100%;
                 object-fit: contain;
             }
-           }    
+           }  
             .packname{
              font-family: "lexend deca", sans-serif;   
              padding:0 1rem;

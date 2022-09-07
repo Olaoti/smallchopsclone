@@ -4,6 +4,9 @@ import Header from "../components/Header";
 import Blurhomebg from "../components/Blurhomebg";
 import Special from "../components/Special";
 import Homepackages from "../components/Homepackages";
+import Buildpack from "../components/Buildpack";
+import Homeorder from "../components/Homeorder";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -15,9 +18,11 @@ const Home = () => {
           <Header />
         </div>
       </div>
-
       <Special />
       <Homepackages />
+      <Buildpack />
+      <Homeorder />
+      <Footer />
     </div>
   );
 };

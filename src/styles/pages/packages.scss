@@ -50,12 +50,6 @@
         .packageslink{
             color: $color-glow-green;
         }
-        .btn{
-            background-color: $color-glow-green;
-            &:hover{
-                background-color: $color-brown-light;
-            }
-        }
     }
     &::-webkit-scrollbar{
         display: none;
@@ -302,6 +296,16 @@
                 font-family: "lexend deca", sans-serif;
                 font-weight: 300;
             }    
+        }
+    }
+}
+@media screen and (min-width:900px) {
+    .navbar{
+        .btn{
+            background-color: $color-glow-green;
+            &:hover{
+                background-color: $color-brown-light;
+            }
         }
     }
 }

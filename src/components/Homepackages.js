@@ -11,7 +11,7 @@ import blurspringroll from "../Assets/blurbgimages/blur-springroll.png";
 const Homepackages = () => {
   const packref = useRef(null);
   useEffect(() => {
-    gsap.fromTo(packref.current, { scale: 1 }, { scale: 0.4 });
+    gsap.fromTo(packref.current, { scale: 1 }, { scale: 1 });
   }, [packref]);
   return (
     <div className="homepacks">
@@ -45,7 +45,12 @@ const Homepackages = () => {
             <div className="pack" key={pack?.id}>
               <Link to="/packages" className="link" state={{ newid: pack.id }}>
                 <div className="packimg">
-                  <img src={pack?.pimg} alt="" ref={packref} />
+                  <img
+                    src={pack?.pimg}
+                    alt=""
+                    ref={packref}
+                    className="pacimage"
+                  />
                 </div>
               </Link>
               <div className="packname">

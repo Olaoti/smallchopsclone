@@ -1,0 +1,63 @@
+.homeorder{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8vh 10vw;
+    gap: 3rem;
+    &__section{
+        width: 100%;
+        height: 100%;
+        .image-sect{
+            position: relative;
+            width: 100%;
+            height: 19rem;
+            background-image: url("../../Assets/homeorderimg/corporate-image.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: grid;
+            justify-items: baseline;
+            align-items: flex-end;
+            border-radius: 6px;
+            .name{
+                font-size: 3.2rem;
+                color: white;
+                padding: 2rem;
+                font-weight: 800;
+            }
+        }    
+        .mini-text{
+            padding: 2rem 10rem 2rem 0;
+            font-size: 1.88rem;
+        }
+        .redirect{
+            font-size: 1.6rem;
+            font-weight: 700;
+            padding: .8rem 0;
+            text-transform: uppercase;
+            border-bottom: 3px solid black;
+            width: fit-content;
+            transition: all .6s ease-in-out;
+            &:hover{
+                color: $color-brown-mid;
+                border-bottom: 3px solid $color-brown-mid;
+            }
+        }
+        &.event{
+            .image-sect{
+                    background: linear-gradient(rgba(169,130,101,0.55),rgba(169,130,101,0.55)),url("../../Assets/homeorderimg/event-image.jpg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+            }
+            .redirect{
+                color: $color-brown-mid;
+                border-bottom: 3px solid $color-brown-mid;
+
+                &:hover{
+                    color: black;
+                border-bottom: 3px solid black;
+                }
+            }
+        }
+    }
+}

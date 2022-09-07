@@ -1,0 +1,49 @@
+.footer{
+    padding-left: 10vw;
+    padding-top: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    &__contents{
+        align-self: flex-end;
+        width: 100%;
+        display: flex;
+        padding-bottom: 20%;
+        img{
+            width: 18%;
+            object-fit: contain;
+        }
+        &__links{
+            padding-top: 2rem;
+            padding-left: 13%;
+            display: flex;
+            font-family: "lexend deca", sans-serif;
+            height: 100%;
+            .footer-block{
+                height: 100%;
+                &:first-child{
+                    padding-right: 3rem;
+                }
+                div{
+                    font-size: 1.75rem;
+                    transition: all .5s ease;
+                    width: max-content;
+                    padding: 1rem 0;
+                    &:hover{
+                        color: $color-brown-mid;
+                    }
+                }
+            }
+            
+        }
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 0;
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
