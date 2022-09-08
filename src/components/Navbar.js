@@ -6,6 +6,7 @@ import logowhite from "../Assets/logowhite.svg";
 import bgleaf from "../Assets/images/package-leaf.png";
 import bgredpepper from "../Assets/images/red-pepper-opposite.png";
 import bgredtomato from "../Assets/images/red-tomato.png";
+import chopstable from "../Assets/images/chopstable.png";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
       <div className={`mobile-navbar ${showMenu ? "show" : "none"}`}>
         <div className="mobile backgroundBg">
           <img
-            src="https://smallchops.ng/images/Signup-Image-Lockup-Side-View.png"
+            src={chopstable}
             alt=""
             className="mainimg"
           />
