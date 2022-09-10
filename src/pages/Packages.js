@@ -7,6 +7,9 @@ import cartwhite from "../Assets/cart-icon-white.svg";
 import arrow from "../Assets/right-arrow-brown.svg";
 import Packagebackground from "../components/Packagebackground";
 const Packages = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [number, setNumber] = useState(0);
   const addnumber = () => {
     if (number < Packageslist.length - 1) {
@@ -42,8 +45,21 @@ const Packages = () => {
     }
   }, [newid]);
 
+  /*quantity state*/
+  const [quantity, setQuantity] = useState(0);
+  const addquantity = (number) => {
+    setQuantity(quantity + 1);
+  };
+  const minusquantity = (number) => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    } else {
+      setQuantity(0);
+    }
+  };
+
   return (
-    <div className="packages">
+    <div className="packages package-section">
       <Navbar />
       <div className="arrows">
         <div className="arrows-section">
@@ -57,7 +73,7 @@ const Packages = () => {
           </div>
         </div>
       </div>
-      <div className="packages__box" id={number}>
+      <div className="packages__box" id={number} key={Packageslist[number].id}>
         <div className="packages__box__description">
           <div className="packagebackground">
             <Packagebackground />
@@ -81,9 +97,13 @@ const Packages = () => {
                 <span>per pack</span>
               </div>
             </div>
-            <div className="sign minus">-</div>
-            <div className="quantity">0</div>
-            <div className="sign plus">+</div>
+            <div className="sign minus" onClick={minusquantity}>
+              -
+            </div>
+            <div className="quantity">{quantity}</div>
+            <div className="sign plus" onClick={addquantity}>
+              +
+            </div>
             <div className="cart">
               <img src={cartwhite} alt="" />
             </div>
@@ -99,7 +119,7 @@ const Packages = () => {
             <div className="packages-content">
               {Packageslist[number]?.content.map((content) => {
                 return (
-                  <div className="each-content">
+                  <div className="each-content" key={number}>
                     <div className="content-img">
                       {content.img && <img src={content.img} alt="" />}
                     </div>

@@ -1,0 +1,106 @@
+.custompack{
+    .navbar{
+        .custompacklink{
+            color: $color-glow-green;
+        }
+    }
+    .packages__box{
+        &__description{
+            .package-name{
+                z-index: 20;
+                input{
+                    font-size: inherit;
+                    color: inherit;
+                    outline: 0;
+                    border: 0;
+                    background-color: inherit;
+                    z-index: 20;
+                    &::placeholder{
+                        color: #aaa;
+                        font-weight: 550;
+                    }
+                }
+            }  
+            .miniinfo{
+                color: $color-brown-light;
+                font-size: 1.5rem;
+                font-style: oblique;
+                padding: .5rem 12%;
+            }  
+            .details-box{
+                display: flex;
+                width: fit-content;
+                background-color: transparent !important;
+                align-items: center;
+                height: 100%;
+                .price-section{
+                    padding: 1rem 1.4rem;
+                    height: auto;
+                    background-color: white;
+                }
+                .cart-text{
+                    height: 100%;
+                    background-color: $color-glow-green;
+                    padding: 1rem 2.4rem;
+                    color: white;
+                    font-size: 2.2rem;
+                    border-radius: 0 1rem 1rem 0;
+                    transition: all 500ms ease;
+                    &:hover{
+                        background-color: $color-green;
+                    }
+                }
+            }
+        }
+        &__content{
+            .content-section{
+                height: 100%;
+                min-height: 80%;
+                .packages-content{
+                    .each-content{
+                        .content-quantity{
+                            padding: 1.5rem 0;
+                            font-size: 1.5rem;
+                            .change-section{
+                                width: fit-content;
+                                display: flex;
+                                background-color: white;
+                                border-radius: 5px;
+                                margin-bottom: .8rem;
+                                .change{
+                                    padding:.4rem 1rem;
+                                    font-size: 1.7rem;
+                                }
+                                .zero{
+                                    color: $color-brown-mid;
+                                    padding:.4rem 1rem;
+                                    border-left: .5px solid $color-brown-light;
+                                    border-right: .5px solid $color-brown-light;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:760px){
+    .custompack{
+        .packages__box{
+            &__description{
+                .package-name{
+                    input{
+                        margin: auto;
+                        width: fit-content;
+                    }
+                }
+                .details-box{
+                    width: fit-content;
+                    padding:0 ;
+
+                }
+            }
+        }
+    }
+}

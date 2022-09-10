@@ -36,11 +36,7 @@ const Navbar = () => {
       </div>
       <div className={`mobile-navbar ${showMenu ? "show" : "none"}`}>
         <div className="mobile backgroundBg">
-          <img
-            src={chopstable}
-            alt=""
-            className="mainimg"
-          />
+          <img src={chopstable} alt="" className="mainimg" />
           <img src={bgredtomato} alt="" className="tomatoimg" />
           <img src={bgredpepper} alt="" className="pepperimg" />
           <img src={bgleaf} alt="" className="leafimg" />
@@ -58,9 +54,11 @@ const Navbar = () => {
           <Link className="link" to="/packages">
             <div className="packageslink">Our Packages</div>
           </Link>
-          <div>
-            Build your <span className="desktop">own</span> pack
-          </div>
+          <Link className="link" to="/custompack">
+            <div className="custompacklink">
+              Build your <span className="desktop">own</span> pack
+            </div>
+          </Link>
           <div>Events</div>
           <div>Corporate</div>
           <div>Contact</div>

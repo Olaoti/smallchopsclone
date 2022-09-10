@@ -46,11 +46,6 @@
             }
         }
     }
-    .navbar{
-        .packageslink{
-            color: $color-glow-green;
-        }
-    }
     &::-webkit-scrollbar{
         display: none;
     }
@@ -189,7 +184,7 @@
         }
         &__content{
             width: 100%;
-            height: 100%;
+            height: auto;
             display:flex;
             flex-direction: column;   
             background-color: $color-brown-bg;
@@ -230,6 +225,7 @@
                             font-family: 'lexend deca', sans-serif;
                             padding:3rem 0;
                             width: 70%;
+                            text-transform: capitalize;
                             span{
                                 color: $color-green;
                             }
@@ -296,6 +292,13 @@
                 font-family: "lexend deca", sans-serif;
                 font-weight: 300;
             }    
+        }
+    }
+}
+.package-section{
+    .navbar{
+        .packageslink{
+            color: $color-glow-green;
         }
     }
 }
@@ -448,11 +451,6 @@
                 height: 100%;
                 text-align: center;
                 z-index: 2;
-                .package-image{
-                    img{
-                        max-height: 45vh;
-                    }
-                }
                 .details-box{
                     width: 50%;
                     div{
