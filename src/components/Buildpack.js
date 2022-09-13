@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 import chicken from "../Assets/buildpackimg/chicken.png";
 import springroll from "../Assets/buildpackimg/springroll.png";
 import puffpuff from "../Assets/buildpackimg/puffpuff.png";
@@ -62,7 +63,9 @@ const Buildpack = () => {
           You can now create a custom package or ten! With all your favorite
           small chops snacks to choose from, tell us what you like.
         </div>
-        <div className="filledbtn">Build Your Pack</div>
+        <Link className="link" to="/custompack">
+          <div className="filledbtn">Build Your Pack</div>
+        </Link>
       </div>
     </div>
   );

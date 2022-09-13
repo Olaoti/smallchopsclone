@@ -59,8 +59,12 @@ const Navbar = () => {
               Build your <span className="desktop">own</span> pack
             </div>
           </Link>
-          <div>Events</div>
-          <div>Corporate</div>
+          <Link className="link" to="/event">
+            <div className="eventlink">Events</div>
+          </Link>
+          <Link className="link" to="/corporate">
+            <div className="corporatelink">Corporate</div>
+          </Link>
           <div>Contact</div>
           <div className="navbar__links__buttons">
             <div className="navbar__links__buttons__button btn">Sign in</div>

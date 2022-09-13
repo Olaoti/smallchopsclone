@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Homeorder = () => {
   return (
@@ -11,7 +12,9 @@ const Homeorder = () => {
           An event without Smallchops is definitely just a gathering. It gets
           better; you can customise your order however you deem fit.
         </div>
-        <div className="redirect point">ORDER FOR YOUR EVENT</div>
+        <Link className="link" to="/event">
+          <div className="redirect point">ORDER FOR YOUR EVENT</div>
+        </Link>
       </div>
       <div className="homeorder__section">
         <div className="image-sect">
@@ -21,7 +24,9 @@ const Homeorder = () => {
           Sometimes all you need for culture fit is a corporate hangout/event
           with a lot Smallchops. This is what we go to work for.
         </div>
-        <div className="redirect point">place order</div>
+        <Link className="link" to="/corporate">
+          <div className="redirect point">place order</div>
+        </Link>
       </div>
     </div>
   );

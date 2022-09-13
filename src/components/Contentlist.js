@@ -7,7 +7,6 @@ import fish from "../Assets/packagesimg/fish.png";
 import mosa from "../Assets/packagesimg/mosa.png";
 import prawn from "../Assets/packagesimg/prawn.png";
 import kebab from "../Assets/packagesimg/kebab.png";
-import laps from "../Assets/packagesimg/laps.png";
 import popcorn from "../Assets/packagesimg/popcorn.png";
 import corndogs from "../Assets/packagesimg/corndogs.png";
 
