@@ -26,6 +26,8 @@ body {
 .link{
   color: inherit;
   text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .point{
   cursor:pointer;
@@ -50,6 +52,8 @@ body {
   color: white;
   cursor: pointer;
   transition: all 500ms ease;
+  user-select: none;
+  -webkit-user-select: none;
   &:hover{
     background-color: $color-glow-green;
   }
@@ -62,6 +66,8 @@ body {
   color: white;
   transition: all 500ms ease;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
   &:hover{
     background-color: $color-brown-light;
   }
