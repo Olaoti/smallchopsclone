@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Packageslist from "../components/Packageslist";
 import arrow from "../Assets/right-arrow-brown.svg";
 
 const Corporate = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [customquantity, setCustomquantity] = useState(0);
   const minusclick = () => {
     if (customquantity > 0) {

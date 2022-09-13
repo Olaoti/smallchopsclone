@@ -212,6 +212,8 @@
                 }
                 .submit{
                     margin: 1rem auto;
+                    user-select: none;
+                    -webkit-user-select: none;
                 }
             }
             &__content{
