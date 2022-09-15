@@ -72,9 +72,10 @@
             &__description{
                 .package-name{
                     input{
-                        margin: auto;
-                        width: fit-content;
                         text-align: center;
+                        margin-left: 0;
+                        padding-left: 0;
+                        width: 90vw;
                     }
                 }
                 .details-box{
