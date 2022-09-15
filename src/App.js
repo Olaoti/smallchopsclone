@@ -5,6 +5,7 @@ import Packages from "./pages/Packages";
 import Custompack from "./pages/Custompack";
 import Event from "./pages/Event";
 import Corporate from "./pages/Corporate";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path={"/custompack"} element={<Custompack />} />
         <Route path={"/event"} element={<Event />} />
         <Route path={"/corporate"} element={<Corporate />} />
+        <Route path={"/checkout"} element={<Checkout />} />
       </Routes>
     </div>
   );

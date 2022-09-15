@@ -216,7 +216,7 @@ body {
     }
 }
 .drinks-box{
-  z-index: 10;
+  z-index: 80;
   font-size: 2.2rem;
   font-weight: 300;
   margin-left: 3rem;
@@ -226,6 +226,11 @@ body {
       width: 2.2rem;
       height: 2.2rem;
   }
+}
+.change-section{
+  user-select: none;
+  -moz-user-select: none;
+  color: black;
 }
 @media screen and (max-width:500px) {
         .packages-content{
@@ -273,4 +278,20 @@ body {
 @import "./styles/pages/custompack.scss";
 @import "./styles/pages/event.scss";
 @import "./styles/pages/corporate.scss";
+@import "./styles/pages/checkout.scss";
 
+.nodrinks{
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease;
+  top: -100vh;
+}
+@media screen and (max-width:760px) {
+  .drinks-box{font-size: 1.6rem;
+    margin-left: 2rem;
+    .checkbox{
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
+}

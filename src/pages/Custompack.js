@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import custompackimg from "../Assets/images/custompack.png";
 import Packagebackground from "../components/Packagebackground";
 import Contentlist from "../components/Contentlist";
+import Drinks from "../components/Drinks";
 
 const Custompack = () => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const Custompack = () => {
             <Packagebackground />
           </div>
           <div className="question">Build Your Pack</div>
-          <div className="package-name head">
+          <div className="package-name head bigscreen">
             <input
               type="text"
               placeholder="Enter Pack Name"
@@ -38,11 +39,20 @@ const Custompack = () => {
               className="point"
             />
           </div>
-          <div className="miniinfo">Customise your pack name</div>
+          <div className="miniinfo bigscreen">Customise your pack name</div>
           <div className="package-image">
             <img src={custompackimg} alt="custom pack image" className="pimg" />
           </div>
-          <div className="details-box">
+          <div className="package-name head smallscreen">
+            <input
+              type="text"
+              placeholder="Enter Pack Name"
+              value="Custom Pack"
+              className="point"
+            />
+          </div>
+          <div className="miniinfo smallscreen">Customise your pack name</div>
+          <div className="details-box bigscreen">
             <div className="price-section">
               <div className="price">
                 ₦ 0<span>per pack</span>
@@ -50,9 +60,8 @@ const Custompack = () => {
             </div>
             <div className="cart-text point">Add to Cart</div>
           </div>
-          <div className="drinks-box">
-            <input type="checkbox" name="drink-box" className="checkbox" /> I
-            want drinks with my Order
+          <div className="custom-drinks bigscreen">
+            <Drinks />
           </div>
         </div>
         <div className="packages__box__content">
@@ -95,6 +104,9 @@ const Custompack = () => {
                   </div>
                 );
               })}
+            </div>
+            <div className="custom-drinks smallscreen">
+              <Drinks />
             </div>
           </div>
         </div>

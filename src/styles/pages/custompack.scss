@@ -1,4 +1,6 @@
 .custompack{
+    position: relative;
+    z-index:5;
     .navbar{
         .custompacklink{
             color: $color-glow-green;
@@ -53,6 +55,9 @@
                 }
             }
         }
+        .custom-drinks{
+            z-index: 50;
+        }
         &__content{
             .content-section{
                 height: 100%;
@@ -69,12 +74,22 @@
                     input{
                         margin: auto;
                         width: fit-content;
+                        text-align: center;
                     }
                 }
                 .details-box{
                    height: 7rem;
                 }
             }
+        }
+        .smallscreen{
+            display: block;
+        }
+        .bigscreen{
+            display: none;
+        }
+        .custom-drinks{
+            padding-bottom: 2rem;
         }
     }
 }

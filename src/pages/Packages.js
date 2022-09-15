@@ -6,6 +6,7 @@ import Packageslist from "../components/Packageslist";
 import cartwhite from "../Assets/cart-icon-white.svg";
 import arrow from "../Assets/right-arrow-brown.svg";
 import Packagebackground from "../components/Packagebackground";
+import Drinks from "../components/Drinks";
 const Packages = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -108,9 +109,8 @@ const Packages = () => {
               <img src={cartwhite} alt="" />
             </div>
           </div>
-          <div className="drinks-box">
-            <input type="checkbox" name="drink-box" className="checkbox" /> I
-            want drinks with my Order
+          <div className="custom-drinks bigscreen">
+            <Drinks />
           </div>
         </div>
         <div className="packages__box__content">
@@ -138,6 +138,9 @@ const Packages = () => {
                 );
               })}
             </div>
+          </div>
+          <div className="custom-drinks smallscreen">
+            <Drinks />
           </div>
           <div className="checkout">
             <div className="checkquestion">Done Selecting your package?</div>

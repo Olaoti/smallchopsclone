@@ -68,20 +68,24 @@ const Navbar = () => {
           <div>Contact</div>
           <div className="navbar__links__buttons">
             <div className="navbar__links__buttons__button btn">Sign in</div>
-            <div className="cart desktop">
-              <img
-                src={cart}
-                className="cart-img"
-                alt=""
-                width={35}
-                height={30}
-              />
-              <div className="cart__order-no">
-                <div>0</div>
+            <Link className="link" to="/checkout">
+              <div className="cart desktop">
+                <img
+                  src={cart}
+                  className="cart-img"
+                  alt=""
+                  width={35}
+                  height={30}
+                />
+                <div className="cart__order-no">
+                  <div>0</div>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
-          <div className="mobile">View Cart</div>
+          <Link className="link" to="/checkout">
+            <div className="mobile">View Cart</div>
+          </Link>
         </div>
       </div>
     </div>

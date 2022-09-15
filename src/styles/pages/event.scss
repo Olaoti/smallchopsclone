@@ -4,6 +4,10 @@
     min-height: 100vh;
     flex-direction: column;
     overflow-y: hidden;
+    position: relative;
+    .custom-drinks{
+        z-index: 50;
+    }
     .sectionhead{
         font-size: 4.9em;
         font-weight: 500;
@@ -62,12 +66,14 @@
             background-color: $color-brown-bg;
             height: 100%;
             overflow: hidden;
+            z-index: 10;
             .main-content{
                 height: 70%;
                 max-height: 75%;
                 overflow-y: scroll;
                 padding: 2rem 7%;
                 border-bottom: 1px solid $color-brown-light;
+                z-index: 10;
                 .sectionhead{
                     color: $color-brown-light;
                 }

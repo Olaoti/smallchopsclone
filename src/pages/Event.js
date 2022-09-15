@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Contentlist from "../components/Contentlist";
 import arrow from "../Assets/right-arrow-brown.svg";
+import Drinks from "../components/Drinks";
 
 const Event = () => {
   useEffect(() => {
@@ -93,10 +94,7 @@ const Event = () => {
                 );
               })}
             </div>
-            <div className="drinks-box point">
-              <input type="checkbox" name="drink-box" className="checkbox" /> I
-              want drinks with my Order
-            </div>
+            <Drinks />
           </div>
           <div className="checkout-section">
             <div className="content-info">
