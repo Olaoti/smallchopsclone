@@ -55,10 +55,12 @@ const Custompack = () => {
           <div className="details-box bigscreen">
             <div className="price-section">
               <div className="price">
-                ₦ 0<span>per pack</span>
+                ₦ 1000<span>per pack</span>
               </div>
             </div>
-            <div className="cart-text point">Add to Cart</div>
+            <div className="cart-text point">
+              <span>Add to Cart</span>
+            </div>
           </div>
           <div className="custom-drinks bigscreen">
             <Drinks />
