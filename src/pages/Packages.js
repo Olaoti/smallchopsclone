@@ -74,7 +74,7 @@ const Packages = () => {
           </div>
         </div>
       </div>
-      <div className="packages__box" id={number} key={Packageslist[number].id}>
+      <div className="packages__box" id={number}>
         <div className="packages__box__description">
           <div className="packagebackground">
             <Packagebackground />
