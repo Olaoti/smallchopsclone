@@ -10,8 +10,9 @@ const Custompack = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [packname, setPackname] = useState("Custom Pack");
   const [customquantity, setCustomquantity] = useState(0);
+  const [packname, setPackname] = useState("Custom Pack");
+
   const minusclick = (id) => {
     if (customquantity > 0) {
       setCustomquantity(customquantity - 1);
@@ -41,7 +42,7 @@ const Custompack = () => {
           </div>
           <div className="miniinfo bigscreen">Customise your pack name</div>
           <div className="package-image">
-            <img src={custompackimg} alt="custom pack image" className="pimg" />
+            <img src={custompackimg} alt="custom pack" className="pimg" />
           </div>
           <div className="package-name head smallscreen">
             <input
@@ -87,14 +88,18 @@ const Custompack = () => {
                       <div className="change-section">
                         <div
                           className="change point"
-                          onClick={minusclick}
+                          onClick={() => {
+                            content.unit > 0 && (content.unit -= 1);
+                          }}
                         >
                           -
                         </div>
-                        <div className="zero">{customquantity}</div>
+                        <div className="zero">{content.unit}</div>
                         <div
                           className="change point"
-                          onClick={plusclick}
+                          onClick={() => {
+                            content.unit += 1;
+                          }}
                         >
                           +
                         </div>
