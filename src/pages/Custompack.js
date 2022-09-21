@@ -88,7 +88,6 @@ const Custompack = () => {
                         <div
                           className="change point"
                           onClick={minusclick}
-                          id={content.id}
                         >
                           -
                         </div>
@@ -96,7 +95,6 @@ const Custompack = () => {
                         <div
                           className="change point"
                           onClick={plusclick}
-                          id={content.id}
                         >
                           +
                         </div>

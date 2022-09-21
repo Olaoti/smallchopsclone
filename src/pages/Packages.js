@@ -47,16 +47,12 @@ const Packages = () => {
   }, [newid]);
 
   /*quantity state*/
-  const [quantity, setQuantity] = useState(0);
-  const addquantity = (number) => {
-    setQuantity(quantity + 1);
+  const addquantity = () => {
+    Packageslist[number].unit = Packageslist[number].unit + 1;
   };
-  const minusquantity = (number) => {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
-    } else {
-      setQuantity(0);
-    }
+
+  const minusquantity = () => {
+    Packageslist[number].unit -= 1;
   };
 
   return (
@@ -101,8 +97,8 @@ const Packages = () => {
             <div className="sign minus" onClick={minusquantity}>
               -
             </div>
-            <div className="quantity">{quantity}</div>
-            <div className="sign plus" onClick={addquantity}>
+            <div className="quantity">{Packageslist[number].unit}</div>
+            <div className="sign plus" onClick={() => addquantity(number)}>
               +
             </div>
             <div className="cart">
@@ -119,7 +115,7 @@ const Packages = () => {
             <div className="packages-content">
               {Packageslist[number]?.content.map((content) => {
                 return (
-                  <div className="each-content" key={number}>
+                  <div className="each-content">
                     <div className="content-img">
                       {content.img && <img src={content.img} alt="" />}
                     </div>

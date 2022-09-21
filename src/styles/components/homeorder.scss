@@ -1,7 +1,7 @@
 .homeorder{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 8vh 10vw;
+    padding: 8vh 10vw 2rem;
     gap: 3rem;
     &__section{
         width: 100%;
@@ -42,7 +42,7 @@
                 border-bottom: 3px solid $color-brown-mid;
             }
         }
-        &.event{
+        &.homeevent{
             .image-sect{
                     background: linear-gradient(rgba(169,130,101,0.55),rgba(169,130,101,0.55)),url("../../Assets/homeorderimg/event-image.jpg");
                     background-repeat: no-repeat;

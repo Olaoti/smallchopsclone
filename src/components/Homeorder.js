@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Homeorder = () => {
   return (
     <div className="homeorder">
-      <div className="homeorder__section event">
+      <div className="homeorder__section homeevent">
         <div className="image-sect">
           <div className="name">Event</div>
         </div>

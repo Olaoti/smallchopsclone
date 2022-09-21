@@ -23,6 +23,7 @@ const Packageslist = [
     pname: "Popcorn (Guguru)",
     pimg: popcorn,
     price: 250,
+    unit: 0,
     content: [
       {
         cname: "Popcorn",
@@ -36,6 +37,7 @@ const Packageslist = [
     pname: "spring roll mini pack",
     pimg: withlovesm,
     price: 500,
+    unit: 0,
     content: [
       {
         cname: "Vegetable Spring Rolls",
@@ -58,6 +60,7 @@ const Packageslist = [
     pname: "samosa mini pack",
     pimg: withlovesm,
     price: 500,
+    unit: 0,
     content: [
       {
         cname: "beef samosas",
@@ -80,6 +83,7 @@ const Packageslist = [
     pname: "everybody pack",
     pimg: withlovesm,
     price: 950,
+    unit: 0,
     content: [
       {
         cname: "Puff puff",
@@ -112,6 +116,7 @@ const Packageslist = [
     pname: "Treat pack",
     pimg: withlovesm,
     price: 1500,
+    unit: 0,
     content: [
       {
         cname: "Puff puff",
@@ -153,6 +158,7 @@ const Packageslist = [
     pname: "urgent 2k pack",
     pimg: withlovesm,
     price: 2000,
+    unit: 0,
     content: [
       {
         cname: "Mosa",
@@ -203,6 +209,7 @@ const Packageslist = [
     pname: "Raw Vegetable Spring Rolls",
     pimg: rolls,
     price: 2250,
+    unit: 0,
     content: [
       {
         cname: "Vegetable Spring Rolls",
@@ -216,6 +223,7 @@ const Packageslist = [
     pname: "Raw beef samosas",
     pimg: samosapack,
     price: 2250,
+    unit: 0,
     content: [
       {
         cname: " Beef Samosas",
@@ -229,6 +237,7 @@ const Packageslist = [
     pname: "Turkey Wing and Fries",
     pimg: withlovesm,
     price: 3000,
+    unit: 0,
     content: [
       {
         cname: "BBQ Turkey (Large)",
@@ -245,6 +254,7 @@ const Packageslist = [
     pname: "akanna pack",
     pimg: withlovesm,
     price: 3000,
+    unit: 0,
     content: [
       {
         cname: "Mosa",
@@ -290,6 +300,7 @@ const Packageslist = [
     pname: "Turkey Wing and Yam Fries",
     pimg: withlovesm,
     price: 3000,
+    unit: 0,
     content: [
       {
         cname: "BBQ Turkey (Large)",
@@ -306,6 +317,7 @@ const Packageslist = [
     pname: "Full Chicken Lap and Yam Fries",
     pimg: withlovesm,
     price: 3500,
+    unit: 0,
     content: [
       {
         cname: " BBQ Chicken Cut (Full Lap)",
@@ -326,6 +338,7 @@ const Packageslist = [
     pname: "Full Chicken Lap and Chips",
     pimg: withlovesm,
     price: 3500,
+    unit: 0,
     content: [
       {
         cname: " BBQ Chicken Cut (Full Lap)",
@@ -346,6 +359,7 @@ const Packageslist = [
     pname: "Standard Seafood Platter",
     pimg: withlove,
     price: 5000,
+    unit: 0,
     content: [
       {
         cname: "Puff puff",
@@ -372,6 +386,7 @@ const Packageslist = [
     treatimg: standard,
     pimg: treatbox,
     price: 5500,
+    unit: 0,
     content: [
       {
         cname: "Puff puff",
@@ -405,6 +420,7 @@ const Packageslist = [
     treatimg: deluxe,
     pimg: treatbox,
     price: 8000,
+    unit: 0,
     content: [
       {
         cname: "Mosa",
@@ -456,6 +472,7 @@ const Packageslist = [
     pname: "deluxe seafood platter",
     pimg: withlove,
     price: 10000,
+    unit: 0,
     content: [
       {
         cname: "puff puff",
@@ -481,6 +498,7 @@ const Packageslist = [
     pname: "standard tray",
     pimg: contentbox,
     price: 10000,
+    unit: 0,
     content: [
       {
         cname: "Puff puff",
@@ -513,6 +531,7 @@ const Packageslist = [
     pname: "midi tray",
     pimg: contentbox,
     price: 12500,
+    unit: 0,
     content: [
       {
         cname: "Puff puff",
@@ -554,6 +573,7 @@ const Packageslist = [
     pname: "deluxe tray",
     pimg: contentbox,
     price: 15000,
+    unit: 0,
     content: [
       {
         cname: "Mosa",
@@ -600,6 +620,7 @@ const Packageslist = [
     pname: "midi treatbox",
     pimg: treatbox,
     price: 6500,
+    unit: 0,
     content: [
       {
         cname: "Mosa",
@@ -646,6 +667,7 @@ const Packageslist = [
     pname: "Raw Shrimp Rolls",
     pimg: prawnrolls,
     price: 5500,
+    unit: 0,
     content: [
       {
         cname: "Prawn Rolls (x5)",
@@ -659,6 +681,7 @@ const Packageslist = [
     pname: "Full Grilled Croaker and Yam Chips",
     pimg: withlovesm,
     price: 6000,
+    unit: 0,
     content: [
       {
         cname: "Grilled Croaker (Full)",
