@@ -37,12 +37,14 @@ const Packages = () => {
     }
   }, [newid]);
   const [list, setList] = useState();
-  const numberedlist = Packageslist?.filter((numberlist) => {
-    return numberlist.id === number;
-  });
+
   useEffect(() => {
-    setList(numberedlist);
-  }, [numberedlist]);
+    setList(
+      Packageslist?.filter((numberlist) => {
+        return numberlist.id === number;
+      })
+    );
+  }, [number]);
   const imageRef = useRef(null);
   useEffect(() => {
     gsap.fromTo(
@@ -50,7 +52,7 @@ const Packages = () => {
       { y: 20, opacity: 0 },
       { y: 0, opacity: 1, duration: 1 }
     );
-  }, [imageRef, number, list]);
+  }, [imageRef, list]);
 
   /*quantity state*/
 
