@@ -8,16 +8,24 @@ const Corporate = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [customquantity, setCustomquantity] = useState(0);
-  const minusclick = () => {
-    if (customquantity > 0) {
-      setCustomquantity(customquantity - 1);
-    } else {
-      setCustomquantity(0);
-    }
+  const [items, setItems] = useState(Packageslist);
+  const [total, setTotal] = useState(0);
+  const plusclick = (index) => {
+    const newItems = [...items];
+
+    newItems[index].unit++;
+    setItems(newItems);
+    setTotal(total + newItems[index].price);
   };
-  const plusclick = () => {
-    setCustomquantity(customquantity + 1);
+  const minusclick = (index) => {
+    const newItems = [...items];
+
+    if (newItems[index].unit > 0) {
+      newItems[index].unit--;
+      setTotal(total - newItems[index].price);
+    }
+
+    setItems(newItems);
   };
 
   return (
@@ -60,7 +68,7 @@ const Corporate = () => {
           <div className="main-content">
             <div className="sectionhead">Packages</div>
             <div className="packages-content">
-              {Packageslist.map((pack) => {
+              {Packageslist.map((pack, index) => {
                 return (
                   <div className="each-content" key={pack?.id}>
                     <div className="circle-line">
@@ -73,11 +81,17 @@ const Corporate = () => {
                     <img src={pack?.pimg} alt="" />
                     <div className="content-quantity">
                       <div className="change-section">
-                        <div className="change point" onClick={minusclick}>
+                        <div
+                          className="change point"
+                          onClick={() => minusclick(index)}
+                        >
                           -
                         </div>
-                        <div className="zero">{customquantity}</div>
-                        <div className="change point" onClick={plusclick}>
+                        <div className="zero">{pack.unit}</div>
+                        <div
+                          className="change point"
+                          onClick={() => plusclick(index)}
+                        >
                           +
                         </div>
                       </div>
@@ -99,7 +113,7 @@ const Corporate = () => {
                 Edit Info{" "}
               </div>
               <div className="total">
-                <span>Total</span>0
+                Total<span>₦ {total}</span>
               </div>
             </div>
             <div className="checkout">

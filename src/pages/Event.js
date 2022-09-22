@@ -8,16 +8,24 @@ const Event = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [customquantity, setCustomquantity] = useState(0);
-  const minusclick = () => {
-    if (customquantity > 0) {
-      setCustomquantity(customquantity - 1);
-    } else {
-      setCustomquantity(0);
-    }
+  const [items, setItems] = useState(Contentlist);
+  const [total, setTotal] = useState(0);
+  const plusclick = (index) => {
+    const newItems = [...items];
+
+    newItems[index].unit++;
+    setItems(newItems);
+    setTotal(total + newItems[index].price);
   };
-  const plusclick = () => {
-    setCustomquantity(customquantity + 1);
+  const minusclick = (index) => {
+    const newItems = [...items];
+
+    if (newItems[index].unit > 0) {
+      newItems[index].unit--;
+      setTotal(total - newItems[index].price);
+    }
+
+    setItems(newItems);
   };
   return (
     <div className="event mainevent">
@@ -57,7 +65,7 @@ const Event = () => {
           <div className="main-content">
             <div className="sectionhead">content per serving</div>
             <div className="packages-content">
-              {Contentlist.map((content) => {
+              {Contentlist?.map((content, index) => {
                 return (
                   <div className="each-content" key={content.id}>
                     <div className="content-img">
@@ -74,16 +82,14 @@ const Event = () => {
                       <div className="change-section">
                         <div
                           className="change point"
-                          onClick={minusclick}
-                          id={content.id}
+                          onClick={() => minusclick(index)}
                         >
                           -
                         </div>
-                        <div className="zero">{customquantity}</div>
+                        <div className="zero">{content.unit}</div>
                         <div
                           className="change point"
-                          onClick={plusclick}
-                          id={content.id}
+                          onClick={() => plusclick(index)}
                         >
                           +
                         </div>
@@ -106,7 +112,7 @@ const Event = () => {
                 Edit Info{" "}
               </div>
               <div className="total">
-                Total<span>₦ 0</span>
+                Total<span>₦ {total}</span>
               </div>
             </div>
             <div className="checkout">

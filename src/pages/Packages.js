@@ -27,15 +27,6 @@ const Packages = () => {
     }
   };
 
-  const imageRef = useRef(null);
-  useEffect(() => {
-    gsap.fromTo(
-      imageRef.current,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1 }
-    );
-  }, [imageRef, number]);
-
   const location = useLocation();
   const { newid } = location.state ? location.state : 0;
   useEffect(() => {
@@ -45,16 +36,34 @@ const Packages = () => {
       setNumber(0);
     }
   }, [newid]);
+  const [list, setList] = useState();
+  const numberedlist = Packageslist?.filter((numberlist) => {
+    return numberlist.id === number;
+  });
+  useEffect(() => {
+    setList(numberedlist);
+  }, [numberedlist]);
+  const imageRef = useRef(null);
+  useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1 }
+    );
+  }, [imageRef, number, list]);
 
   /*quantity state*/
-  const addquantity = () => {
-    Packageslist[number].unit = Packageslist[number].unit + 1;
-  };
 
-  const minusquantity = () => {
-    Packageslist[number].unit -= 1;
+  const addquantity = (index) => {
+    const newList = [...list];
+    newList[index].unit++;
+    setList(newList);
   };
-
+  const minusquantity = (index) => {
+    const newList = [...list];
+    newList[index].unit > 0 && newList[index].unit--;
+    setList(newList);
+  };
   return (
     <div className="packages package-section">
       <Navbar />
@@ -70,80 +79,89 @@ const Packages = () => {
           </div>
         </div>
       </div>
-      <div className="packages__box" id={number}>
-        <div className="packages__box__description">
-          <div className="packagebackground">
-            <Packagebackground />
-          </div>
-          <div className="question">
-            What Package Do You Feel Like Enjoying Today?
-          </div>
-          <div className="package-name head">{Packageslist[number]?.pname}</div>
-          <div className="package-image">
-            <img
-              src={Packageslist[number]?.pimg}
-              alt=""
-              className="pimg"
-              ref={imageRef}
-            />
-          </div>
-          <div className="details-box">
-            <div className="price-section">
-              <div className="price">
-                ₦ {Packageslist[number]?.price}
-                <span>per pack</span>
+      {list?.map((eachpack, index) => {
+        return (
+          <div className="packages__box" key={eachpack.id}>
+            <div className="packages__box__description">
+              <div className="packagebackground">
+                <Packagebackground />
+              </div>
+              <div className="question">
+                What Package Do You Feel Like Enjoying Today?
+              </div>
+              <div className="package-name head">{eachpack?.pname}</div>
+              <div className="package-image">
+                <img
+                  src={eachpack?.pimg}
+                  alt=""
+                  className="pimg"
+                  ref={imageRef}
+                />
+              </div>
+              <div className="details-box">
+                <div className="price-section">
+                  <div className="price">
+                    ₦ {eachpack?.price}
+                    <span>per pack</span>
+                  </div>
+                </div>
+                <div
+                  className="sign minus"
+                  onClick={() => minusquantity(index)}
+                >
+                  -
+                </div>
+                <div className="quantity">{eachpack?.unit}</div>
+                <div className="sign plus" onClick={() => addquantity(index)}>
+                  +
+                </div>
+                <div className="cart">
+                  <img src={cartwhite} alt="" />
+                </div>
+              </div>
+              <div className="custom-drinks bigscreen">
+                <Drinks className="package-drink" />
               </div>
             </div>
-            <div className="sign minus" onClick={minusquantity}>
-              -
-            </div>
-            <div className="quantity">{Packageslist[number].unit}</div>
-            <div className="sign plus" onClick={() => addquantity(number)}>
-              +
-            </div>
-            <div className="cart">
-              <img src={cartwhite} alt="" />
-            </div>
-          </div>
-          <div className="custom-drinks bigscreen">
-            <Drinks />
-          </div>
-        </div>
-        <div className="packages__box__content">
-          <div className="content-section">
-            <div className="content-heading head">Content</div>
-            <div className="packages-content">
-              {Packageslist[number]?.content.map((content) => {
-                return (
-                  <div className="each-content">
-                    <div className="content-img">
-                      {content.img && <img src={content.img} alt="" />}
-                    </div>
-                    <div className="circle-line">
-                      <div className="line"></div>
-                      <div className="circle">
-                        <div className="inner-circle"></div>
+            <div className="packages__box__content">
+              <div className="content-section">
+                <div className="content-heading head">Content</div>
+                <div className="packages-content">
+                  {eachpack?.content.map((content) => {
+                    return (
+                      <div className="each-content">
+                        <div className="content-img">
+                          {content.img && <img src={content.img} alt="" />}
+                        </div>
+                        <div className="circle-line">
+                          <div className="line"></div>
+                          <div className="circle">
+                            <div className="inner-circle"></div>
+                          </div>
+                          <div className="line bottom"></div>
+                        </div>
+                        <div className="content-quantity">
+                          <span className="piece">{content.pieces}</span>{" "}
+                          {content.cname}
+                        </div>
                       </div>
-                      <div className="line bottom"></div>
-                    </div>
-                    <div className="content-quantity">
-                      <span className="piece">{content.pieces}</span>{" "}
-                      {content.cname}
-                    </div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="custom-drinks smallscreen">
+                <Drinks />
+              </div>
+              <div className="checkout">
+                <div className="checkquestion">
+                  Done Selecting your package?
+                </div>
+                <div className="btn">Checkout</div>
+              </div>
             </div>
           </div>
-          <div className="custom-drinks smallscreen">
-            <Drinks />
-          </div>
-          <div className="checkout">
-            <div className="checkquestion">Done Selecting your package?</div>
-            <div className="btn">Checkout</div>
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };

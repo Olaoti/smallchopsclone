@@ -3,25 +3,33 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import custompackimg from "../Assets/images/custompack.png";
 import Packagebackground from "../components/Packagebackground";
-import Contentlist from "../components/Contentlist";
 import Drinks from "../components/Drinks";
+import Contentlist from "../components/Contentlist";
 
-const Custompack = () => {
+function Custompack() {
+  const [items, setItems] = useState(Contentlist);
+  const [total, setTotal] = useState(0);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [customquantity, setCustomquantity] = useState(0);
-  const [packname, setPackname] = useState("Custom Pack");
 
-  const minusclick = (id) => {
-    if (customquantity > 0) {
-      setCustomquantity(customquantity - 1);
-    } else {
-      setCustomquantity(0);
-    }
+  const [packname, setPackname] = useState("Custom Pack");
+  const handleQuantityIncrease = (index) => {
+    const newItems = [...items];
+
+    newItems[index].unit++;
+    setItems(newItems);
+    setTotal(total + newItems[index].price);
   };
-  const plusclick = () => {
-    setCustomquantity(customquantity + 1);
+  const handleQuantitydecrease = (index) => {
+    const newItems = [...items];
+
+    if (newItems[index].unit > 0) {
+      newItems[index].unit--;
+      setTotal(total - newItems[index].price);
+    }
+
+    setItems(newItems);
   };
   return (
     <div className="packages custompack">
@@ -56,7 +64,8 @@ const Custompack = () => {
           <div className="details-box bigscreen">
             <div className="price-section">
               <div className="price">
-                ₦ 1000<span>per pack</span>
+                ₦ {total}
+                <span>per pack</span>
               </div>
             </div>
             <div className="cart-text point">
@@ -71,7 +80,7 @@ const Custompack = () => {
           <div className="content-section">
             <div className="content-heading head">Content</div>
             <div className="packages-content">
-              {Contentlist.map((content) => {
+              {items.map((content, index) => {
                 return (
                   <div className="each-content" key={content.id}>
                     <div className="content-img">
@@ -88,18 +97,14 @@ const Custompack = () => {
                       <div className="change-section">
                         <div
                           className="change point"
-                          onClick={() => {
-                            content.unit > 0 && (content.unit -= 1);
-                          }}
+                          onClick={() => handleQuantitydecrease(index)}
                         >
                           -
                         </div>
                         <div className="zero">{content.unit}</div>
                         <div
                           className="change point"
-                          onClick={() => {
-                            content.unit += 1;
-                          }}
+                          onClick={() => handleQuantityIncrease(index)}
                         >
                           +
                         </div>
@@ -118,6 +123,6 @@ const Custompack = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Custompack;

@@ -16,6 +16,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
+    z-index: 4;
+    .packagebackground{
+        z-index: -1;
+    }
     .arrows{
         position: absolute;
         width: 100%;
@@ -173,7 +177,11 @@
                 }
             }
             .drinks-box{
-                margin-left: 24%;
+                text-align: center;
+            }
+            .package-drink{
+                z-index: 50;
+
             }
         }
         &__content{

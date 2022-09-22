@@ -1,12 +1,12 @@
 .custompack{
     position: relative;
-    z-index:5;
     .navbar{
         .custompacklink{
             color: $color-glow-green;
         }
     }
     .packages__box{
+    z-index:5;
         &__description{
             .package-name{
                 z-index: 20;
