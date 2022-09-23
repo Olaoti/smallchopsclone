@@ -14,6 +14,11 @@ const Totalslist = [
     totalname: "corporate",
     total: 0,
   },
+  {
+    id: 4,
+    totalname: "checkout",
+    total: 0,
+  },
 ];
 
-export default Totalslist
+export default Totalslist;

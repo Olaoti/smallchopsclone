@@ -7,6 +7,7 @@ import bgleaf from "../Assets/images/package-leaf.png";
 import bgredpepper from "../Assets/images/red-pepper-opposite.png";
 import bgredtomato from "../Assets/images/red-tomato.png";
 import chopstable from "../Assets/images/chopstable.png";
+import Totalslist from "../components/Totalslist";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -78,7 +79,7 @@ const Navbar = () => {
                   height={30}
                 />
                 <div className="cart__order-no">
-                  <div>0</div>
+                  <div>{Totalslist[3].total}</div>
                 </div>
               </div>
             </Link>

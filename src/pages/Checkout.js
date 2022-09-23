@@ -4,8 +4,8 @@ import visa from "../Assets/paymentlogos/visa-logo.svg";
 import verve from "../Assets/paymentlogos/verve-logo.svg";
 import mastercard from "../Assets/paymentlogos/mastercard-logo.svg";
 import custompack from "../Assets/images/custompack.png";
-import Contentlist from "../components/Contentlist";
 import Packageslist from "../components/Packageslist";
+import Drinkslist from "../components/Drinkslist";
 
 const Checkout = () => {
   const [customquantity, setCustomquantity] = useState(0);
@@ -19,40 +19,49 @@ const Checkout = () => {
   const plusclick = () => {
     setCustomquantity(customquantity + 1);
   };
+  const packages = Packageslist.filter((newp) => {
+    return newp.unit > 0;
+  });
+  const drinks = Drinkslist.filter((newd) => {
+    return newd.unit > 0;
+  });
+  const Checkoutlist = [...packages, ...drinks];
 
+  console.log(Checkoutlist);
   return (
     <div className="check">
       <Navbar />
       <div className="check__section">
         <div className="check__section__cart">
           <div className="cart-head">Cart</div>
-          <div className="ordered-section">
-            <div className="cancel">
-              <span></span>
-              <span></span>
-            </div>
-            <div className="packimg">
-              <img src={custompack} alt="" />
-            </div>
-            <div className="orderedinfo">
-              <div className="name">
-                Custom pack 1
-                {Contentlist.map((cont) => {
-                  return <div>{cont.unit > 0 && cont.contname}</div>;
-                })}
-              </div>
-              <div className="change-section">
-                <div className="change point" onClick={minusclick}>
-                  -
+          {Checkoutlist?.map((pack, index) => {
+            return (
+              <div className="ordered-section" key={index}>
+                <div className="cancel">
+                  <span></span>
+                  <span></span>
                 </div>
-                <div className="zero">{customquantity}</div>
-                <div className="change point" onClick={plusclick}>
-                  +
+                <div className="packimg">
+                  <img src={pack?.img || custompack} alt="" />
+                </div>
+                <div className="orderedinfo">
+                  <div className="name">{pack.dname || pack.pname}</div>
+                  <div className="change-section">
+                    <div className="change point" onClick={minusclick}>
+                      -
+                    </div>
+                    <div className="zero">{pack.unit}</div>
+                    <div className="change point" onClick={plusclick}>
+                      +
+                    </div>
+                  </div>
+                </div>
+                <div className="price">
+                  ₦ {pack?.total || pack?.price * pack?.unit}
                 </div>
               </div>
-            </div>
-            <div className="price">17,580</div>
-          </div>
+            );
+          })}
         </div>
         <div className="check__section__details">
           <div className="head">Checkout</div>

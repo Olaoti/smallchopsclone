@@ -1,22 +1,33 @@
 import React, { useState } from "react";
 import Drinkslist from "./Drinkslist";
+import Totalslist from "./Totalslist";
 
 function Drinks() {
   const [drinksarray, setDrinksarray] = useState(Drinkslist);
+  const [Totals, setTotals] = useState(Totalslist);
+
   const plusclick = (index) => {
     const newList = [...drinksarray];
+    const newTotal = [...Totals];
+
     newList[index].unit++;
+    newTotal[3].total += 1;
     newList[index].total += 300;
+
     setDrinksarray(newList);
+    setTotals(newTotal);
   };
   const minusclick = (index) => {
     const newList = [...drinksarray];
+    const newTotal = [...Totals];
     if (newList[index].unit > 0) {
       newList[index].unit--;
+      newTotal[3].total--;
       newList[index].total -= 300;
     }
 
     setDrinksarray(newList);
+    setTotals(newTotal);
   };
 
   const [drinksdisplay, setDrinksdisplay] = useState(false);

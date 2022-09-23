@@ -7,6 +7,8 @@ import cartwhite from "../Assets/cart-icon-white.svg";
 import arrow from "../Assets/right-arrow-brown.svg";
 import Packagebackground from "../components/Packagebackground";
 import Drinks from "../components/Drinks";
+import Totalslist from "../components/Totalslist";
+import Contentlist from "../components/Contentlist";
 const Packages = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,16 +57,25 @@ const Packages = () => {
   }, [imageRef, list]);
 
   /*quantity state*/
-
+  const [Totals, setTotals] = useState(Totalslist);
   const addquantity = (index) => {
     const newList = [...list];
+    const newTotal = [...Totals];
     newList[index].unit++;
+    newTotal[3].total++;
+
     setList(newList);
+    setTotals(newTotal);
   };
   const minusquantity = (index) => {
     const newList = [...list];
-    newList[index].unit > 0 && newList[index].unit--;
+    const newTotal = [...Totals];
+    if (newList[index].unit > 0) {
+      newList[index].unit--;
+      newTotal[3].total--;
+    }
     setList(newList);
+    setTotals(newTotal);
   };
   return (
     <div className="packages package-section">
