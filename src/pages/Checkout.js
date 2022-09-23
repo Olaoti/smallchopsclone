@@ -42,7 +42,7 @@ const Checkout = () => {
                   <span></span>
                 </div>
                 <div className="packimg">
-                  <img src={pack?.img || custompack} alt="" />
+                  <img src={pack?.img || pack?.pimg || custompack} alt="" />
                 </div>
                 <div className="orderedinfo">
                   <div className="name">{pack.dname || pack.pname}</div>

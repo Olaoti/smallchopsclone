@@ -23,12 +23,20 @@ const Navbar = () => {
         <div className="logo">
           <img src={logo} alt="" />
         </div>
-        <div className="cart mobile">
-          <img src={cart} className="cart-img" alt="" width={35} height={30} />
-          <div className="cart__order-no">
-            <div>{Totalslist[3].total}</div>
+        <Link className="link" to="/checkout">
+          <div className="cart mobile">
+            <img
+              src={cart}
+              className="cart-img"
+              alt=""
+              width={35}
+              height={30}
+            />
+            <div className="cart__order-no">
+              <div>{Totalslist[3].total}</div>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="menu" onClick={menuClick}>
           <span></span>
           <span></span>
