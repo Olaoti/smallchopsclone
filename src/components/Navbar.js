@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="cart mobile">
           <img src={cart} className="cart-img" alt="" width={35} height={30} />
           <div className="cart__order-no">
-            <div>0</div>
+            <div>{Totalslist[3].total}</div>
           </div>
         </div>
         <div className="menu" onClick={menuClick}>
