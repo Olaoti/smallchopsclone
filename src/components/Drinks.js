@@ -1,36 +1,22 @@
 import React, { useState } from "react";
-import coke from "../Assets/drinksimg/coke-bottles.png";
-import fanta from "../Assets/drinksimg/fanta-bottles.png";
-import sprite from "../Assets/drinksimg/sprite-bottles.png";
+import Drinkslist from "./Drinkslist";
 
-const Drinks = () => {
-  const drinkslist = [
-    {
-      id: 1,
-      img: coke,
-      dname: "Coca - cola",
-    },
-    {
-      id: 2,
-      img: fanta,
-      dname: "Fanta",
-    },
-    {
-      id: 3,
-      img: sprite,
-      dname: "sprite",
-    },
-  ];
-  const [customquantity, setCustomquantity] = useState(0);
-  const minusclick = () => {
-    if (customquantity > 0) {
-      setCustomquantity(customquantity - 1);
-    } else {
-      setCustomquantity(0);
-    }
+function Drinks() {
+  const [drinksarray, setDrinksarray] = useState(Drinkslist);
+  const plusclick = (index) => {
+    const newList = [...drinksarray];
+    newList[index].unit++;
+    newList[index].total += 300;
+    setDrinksarray(newList);
   };
-  const plusclick = () => {
-    setCustomquantity(customquantity + 1);
+  const minusclick = (index) => {
+    const newList = [...drinksarray];
+    if (newList[index].unit > 0) {
+      newList[index].unit--;
+      newList[index].total -= 300;
+    }
+
+    setDrinksarray(newList);
   };
 
   const [drinksdisplay, setDrinksdisplay] = useState(false);
@@ -53,7 +39,7 @@ const Drinks = () => {
         <div className="drinks">
           <div className="info">Select your drink(s)</div>
           <div className="packages-content">
-            {drinkslist.map((drink) => {
+            {drinksarray?.map((drink, index) => {
               return (
                 <div className="each-content" key={drink?.id}>
                   <div className="circle-line">
@@ -67,12 +53,18 @@ const Drinks = () => {
                   <div className="content-quantity">
                     <div className="content-name">{drink?.dname} (small)</div>
                     <div className="change-section">
-                      <div className="price">0</div>
-                      <div className="change point" onClick={minusclick}>
+                      <div className="price">₦ {drink?.total}</div>
+                      <div
+                        className="change point"
+                        onClick={() => minusclick(index)}
+                      >
                         -
                       </div>
-                      <div className="zero">{customquantity}</div>
-                      <div className="change point" onClick={plusclick}>
+                      <div className="zero">{drink.unit}</div>
+                      <div
+                        className="change point"
+                        onClick={() => plusclick(index)}
+                      >
                         +
                       </div>
                     </div>
@@ -88,6 +80,6 @@ const Drinks = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Drinks;

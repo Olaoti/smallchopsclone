@@ -4,6 +4,8 @@ import visa from "../Assets/paymentlogos/visa-logo.svg";
 import verve from "../Assets/paymentlogos/verve-logo.svg";
 import mastercard from "../Assets/paymentlogos/mastercard-logo.svg";
 import custompack from "../Assets/images/custompack.png";
+import Contentlist from "../components/Contentlist";
+import Packageslist from "../components/Packageslist";
 
 const Checkout = () => {
   const [customquantity, setCustomquantity] = useState(0);
@@ -17,6 +19,7 @@ const Checkout = () => {
   const plusclick = () => {
     setCustomquantity(customquantity + 1);
   };
+
   return (
     <div className="check">
       <Navbar />
@@ -32,7 +35,12 @@ const Checkout = () => {
               <img src={custompack} alt="" />
             </div>
             <div className="orderedinfo">
-              <div className="name">Custom pack 1</div>
+              <div className="name">
+                Custom pack 1
+                {Contentlist.map((cont) => {
+                  return <div>{cont.unit > 0 && cont.contname}</div>;
+                })}
+              </div>
               <div className="change-section">
                 <div className="change point" onClick={minusclick}>
                   -

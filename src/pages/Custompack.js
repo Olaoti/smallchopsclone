@@ -5,10 +5,11 @@ import custompackimg from "../Assets/images/custompack.png";
 import Packagebackground from "../components/Packagebackground";
 import Drinks from "../components/Drinks";
 import Contentlist from "../components/Contentlist";
+import Totalslist from "../components/Totalslist";
 
 function Custompack() {
   const [items, setItems] = useState(Contentlist);
-  const [total, setTotal] = useState(0);
+  const [totals, setTotals] = useState(Totalslist);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,20 +17,23 @@ function Custompack() {
   const [packname, setPackname] = useState("Custom Pack");
   const handleQuantityIncrease = (index) => {
     const newItems = [...items];
-
+    const newtotal = [...totals];
     newItems[index].unit++;
+    newtotal[0].total += newItems[index].price;
     setItems(newItems);
-    setTotal(total + newItems[index].price);
+    setTotals(newtotal);
   };
   const handleQuantitydecrease = (index) => {
     const newItems = [...items];
+    const newtotal = [...totals];
 
     if (newItems[index].unit > 0) {
       newItems[index].unit--;
-      setTotal(total - newItems[index].price);
+      newtotal[0].total -= newItems[index].price;
     }
 
     setItems(newItems);
+    setTotals(newtotal);
   };
   return (
     <div className="packages custompack">
@@ -64,7 +68,7 @@ function Custompack() {
           <div className="details-box bigscreen">
             <div className="price-section">
               <div className="price">
-                ₦ {total}
+                ₦ {totals[0]?.total}
                 <span>per pack</span>
               </div>
             </div>

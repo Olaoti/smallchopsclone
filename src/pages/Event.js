@@ -1,31 +1,36 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import Contentlist from "../components/Contentlist";
+import Eventlist from "../components/Eventlist";
 import arrow from "../Assets/right-arrow-brown.svg";
 import Drinks from "../components/Drinks";
+import Totalslist from "../components/Totalslist";
 
 const Event = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [items, setItems] = useState(Contentlist);
-  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(Eventlist);
+  const [totals, setTotals] = useState(Totalslist);
+
   const plusclick = (index) => {
     const newItems = [...items];
-
+    const newtotal = [...totals];
     newItems[index].unit++;
+    newtotal[1].total += newItems[index].price;
     setItems(newItems);
-    setTotal(total + newItems[index].price);
+    setTotals(newtotal);
   };
   const minusclick = (index) => {
     const newItems = [...items];
+    const newtotal = [...totals];
 
     if (newItems[index].unit > 0) {
       newItems[index].unit--;
-      setTotal(total - newItems[index].price);
+      newtotal[1].total -= newItems[index].price;
     }
 
     setItems(newItems);
+    setTotals(newtotal);
   };
   return (
     <div className="event mainevent">
@@ -65,7 +70,7 @@ const Event = () => {
           <div className="main-content">
             <div className="sectionhead">content per serving</div>
             <div className="packages-content">
-              {Contentlist?.map((content, index) => {
+              {Eventlist?.map((content, index) => {
                 return (
                   <div className="each-content" key={content.id}>
                     <div className="content-img">
@@ -112,7 +117,7 @@ const Event = () => {
                 Edit Info{" "}
               </div>
               <div className="total">
-                Total<span>₦ {total}</span>
+                Total<span>₦ {totals[1]?.total}</span>
               </div>
             </div>
             <div className="checkout">

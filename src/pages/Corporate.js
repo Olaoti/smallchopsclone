@@ -1,31 +1,36 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import Packageslist from "../components/Packageslist";
 import arrow from "../Assets/right-arrow-brown.svg";
 import Drinks from "../components/Drinks";
+import Corporatelist from "../components/Corporatelist";
+import Totalslist from "../components/Totalslist";
 
 const Corporate = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [items, setItems] = useState(Packageslist);
-  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(Corporatelist);
+  const [totals, setTotals] = useState(Totalslist);
+
   const plusclick = (index) => {
     const newItems = [...items];
-
+    const newtotal = [...totals];
     newItems[index].unit++;
+    newtotal[2].total += newItems[index].price;
     setItems(newItems);
-    setTotal(total + newItems[index].price);
+    setTotals(newtotal);
   };
   const minusclick = (index) => {
     const newItems = [...items];
+    const newtotal = [...totals];
 
     if (newItems[index].unit > 0) {
       newItems[index].unit--;
-      setTotal(total - newItems[index].price);
+      newtotal[2].total -= newItems[index].price;
     }
 
     setItems(newItems);
+    setTotals(newtotal);
   };
 
   return (
@@ -68,7 +73,7 @@ const Corporate = () => {
           <div className="main-content">
             <div className="sectionhead">Packages</div>
             <div className="packages-content">
-              {Packageslist.map((pack, index) => {
+              {items.map((pack, index) => {
                 return (
                   <div className="each-content" key={pack?.id}>
                     <div className="circle-line">
@@ -113,7 +118,7 @@ const Corporate = () => {
                 Edit Info{" "}
               </div>
               <div className="total">
-                Total<span>₦ {total}</span>
+                Total <span>₦ {Totalslist[2]?.total}</span>
               </div>
             </div>
             <div className="checkout">
