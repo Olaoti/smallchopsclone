@@ -74,7 +74,7 @@ function Custompack() {
             <input
               type="text"
               placeholder="Enter Pack Name"
-              defaultValue="Custom Pack"
+              defaultValue={packname}
               className="point"
               onClick={(e) => {
                 setPackname(e.target.value);
