@@ -8,7 +8,6 @@ import arrow from "../Assets/right-arrow-brown.svg";
 import Packagebackground from "../components/Packagebackground";
 import Drinks from "../components/Drinks";
 import Totalslist from "../components/Totalslist";
-import Contentlist from "../components/Contentlist";
 const Packages = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -140,9 +139,9 @@ const Packages = () => {
               <div className="content-section">
                 <div className="content-heading head">Content</div>
                 <div className="packages-content">
-                  {eachpack?.content.map((content) => {
+                  {eachpack?.content.map((content, index) => {
                     return (
-                      <div className="each-content">
+                      <div className="each-content" key={index}>
                         <div className="content-img">
                           {content.img && <img src={content.img} alt="" />}
                         </div>

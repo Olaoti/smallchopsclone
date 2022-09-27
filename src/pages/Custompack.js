@@ -14,7 +14,6 @@ function Custompack() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [packname, setPackname] = useState("Custom Pack");
   const handleQuantityIncrease = (index) => {
     const newItems = [...items];
     const newtotal = [...totals];
@@ -35,6 +34,18 @@ function Custompack() {
     setItems(newItems);
     setTotals(newtotal);
   };
+  const cartClicked = () => {
+    /*const newcart = {
+      contname: packname,
+      total: totals[0]?.total,
+      unit: 0,
+    };*/
+
+    console.log("lel");
+  };
+
+  const [packname, setPackname] = useState(`Custom pack 1`);
+
   return (
     <div className="packages custompack">
       <Navbar />
@@ -48,8 +59,11 @@ function Custompack() {
             <input
               type="text"
               placeholder="Enter Pack Name"
-              value="Custom Pack"
+              defaultValue={packname}
               className="point"
+              onClick={(e) => {
+                setPackname(e.target.value);
+              }}
             />
           </div>
           <div className="miniinfo bigscreen">Customise your pack name</div>
@@ -60,8 +74,11 @@ function Custompack() {
             <input
               type="text"
               placeholder="Enter Pack Name"
-              value="Custom Pack"
+              defaultValue="Custom Pack"
               className="point"
+              onClick={(e) => {
+                setPackname(e.target.value);
+              }}
             />
           </div>
           <div className="miniinfo smallscreen">Customise your pack name</div>
@@ -72,7 +89,10 @@ function Custompack() {
                 <span>per pack</span>
               </div>
             </div>
-            <div className="cart-text point">
+            <div
+              className="cart-text point noselect"
+              onClick={() => cartClicked}
+            >
               <span>Add to Cart</span>
             </div>
           </div>

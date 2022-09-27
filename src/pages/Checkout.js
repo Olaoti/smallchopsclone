@@ -6,6 +6,7 @@ import mastercard from "../Assets/paymentlogos/mastercard-logo.svg";
 import custompack from "../Assets/images/custompack.png";
 import Packageslist from "../components/Packageslist";
 import Drinkslist from "../components/Drinkslist";
+import Custompacklist from "../components/Custompacklist";
 
 const Checkout = () => {
   const [customquantity, setCustomquantity] = useState(0);
@@ -25,9 +26,8 @@ const Checkout = () => {
   const drinks = Drinkslist.filter((newd) => {
     return newd.unit > 0;
   });
-  const Checkoutlist = [...packages, ...drinks];
+  const Checkoutlist = [...packages, ...drinks, ...Custompacklist];
 
-  console.log(Checkoutlist);
   return (
     <div className="check">
       <Navbar />
@@ -115,7 +115,7 @@ const Checkout = () => {
             <div className="line"></div>
           </div>
           <div className="input" id="checkbox">
-            <input type="radio" checked />
+            <input type="radio" defaultChecked />
             Delivery to your address
           </div>
           <div className="smalltext">

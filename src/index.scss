@@ -232,6 +232,10 @@ body {
   -moz-user-select: none;
   color: black;
 }
+.noselect{
+  user-select: none;
+  -moz-user-select: none;
+}
 @media screen and (max-width:500px) {
         .packages-content{
             grid-template-columns: 1fr;
