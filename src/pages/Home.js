@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <div className="home">
       <div className="landing">
-        <Navbar />
         <div className="home__header">
           <Blurhomebg />
           <Header />
