@@ -31,10 +31,54 @@
         height: auto;
         margin: 1rem auto 0;
         margin-top: auto;
+        position: relative;
+        &__contents{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            img{
+                height: 12vw;
+                object-fit: contain;
+                z-index: 6;
+                position: absolute;
+                bottom: 0;
+            }
+            .chicken{
+                right: 20%;
+                height: 16vw;
+                transform: rotate(65deg);
+            }
+            .fries{
+                top: 30%;
+                right: 45%;
+                height: 8.5vw;
+                transform: rotate(-25deg);
+            }
+            .wings{
+                left: 30%;
+                transform: rotate(-90deg);
+                height: 14vw;
+            }
+            .redpepper{
+                height: 6vw;
+                left: 20%;
+            }
+            .yellowpepper{
+                right: 12%;
+            }
+            .pepper{
+                height: 9vw;
+                transform: rotate(-35deg);
+            }
+        }
         .openup{
             position: relative;
-            width: 80%;
+            width: 85%;
             margin: 0 auto;
+            z-index: 0;
             .opened{
                 display: flex;
                 .leftopen{
@@ -53,20 +97,19 @@
                     right: 0;
                 }
                 .mainopen{
-                    position: relative;
-                    border-top: 5vw solid rgb(238,238,238);
+                    border-top: 6.2vw solid rgb(238,238,238);
                     border-left: 8vw solid transparent;
                     border-right: 8vw solid transparent;
                     height: 0;
                     width: 100%;
-                 
                 }
             }
             .opentip{
                 position: absolute;
-                width: 100%;
+                width: 98%;
+                left: 1%;
                 top: 0;  
-                height: 2.2rem;
+                height: 20%;
                 background-color: rgb(228,228,228);
             }
         }
@@ -74,7 +117,10 @@
         .relatived{
             position: relative;
             .top{
-                position: absolute;      
+                position: absolute; 
+                z-index: 10;
+                height: auto;
+                width: 100%;
                 .cover{
                     border-bottom: 6vw solid rgb(238,238,238);
                     /*the animation would be made by changes to the border-bottom*/
@@ -85,7 +131,7 @@
                 }
                 .covertip{
                     width: 56vw;
-                    height: 1rem;
+                    height: 2rem;
                     background-color: rgb(215,215,215);
                 }
             }
@@ -93,6 +139,7 @@
                 display: flex;
                 width: 100%;
                 height: 6vw;
+                z-index: 2;
                 .left{
                     width: 0;
                     height: 0;
@@ -118,12 +165,37 @@
             width: 100%;
             height: 6.2vw;
             background-color: $color-brown-light;
+            z-index: 10;
+            position: relative;
+        }
+    }
+}
+@media screen and (max-width:900px){
+    .header{
+        &__animation{
+            width: 70vw;
+            .relatived{
+                .top{
+                    .covertip{
+                        width: 70vw;
+                    }
+                }
+                .middle{
+                    .mid{
+                        width: 80%;
+                    }
+                }
+            }
+            .bottom{
+                height: 8rem;
+            }
         }
     }
 }
 @media screen and (max-width:800px){
     .header{
         z-index: 4;
+        min-height: 94vh;
         &__text{
             font-size: 3.6rem;
             margin: 10vh auto 3rem;
@@ -131,6 +203,64 @@
         &__btn{
             font-size: 1.7rem;
             padding: 1.4rem 3.2em;
+        }
+        &__animation{
+            &__contents{
+
+                img{
+                    height: 12rem;
+                    bottom: -2rem;
+                }
+                .chicken{
+                    height: 16rem;
+                }
+                .fries{
+                    height: 8.5rem;
+                }
+                .wings{
+                    height: 14rem;
+                }
+                .redpepper{
+                    height: 6rem;
+                }
+                .pepper{
+                    height: 9rem;
+                }
+            }
+        }
+    }  
+}
+@media screen and (max-width:500px){
+    .header{
+        &__animation{
+            width: 84vw;
+            .openup{
+                .leftopen, .rightopen{
+                    display: none;
+                }
+            }
+            .relatived{
+                .top{
+                    .covertip{
+                        width: 84vw;
+                    }
+                }
+                .middle{
+                    height: 5rem;
+                    .left{
+                        border-bottom: 5rem solid rgb(228,228,228);
+                    }
+                    .right{
+                        border-bottom: 5rem solid rgb(228,228,228);
+                    }
+                    .mid{
+                        width: 80%;
+                    }
+                }
+            }
+            .bottom{
+                height: 5.5rem;
+            }
         }
     }
 }

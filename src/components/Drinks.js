@@ -11,7 +11,7 @@ function Drinks() {
     const newTotal = [...Totals];
 
     newList[index].unit++;
-    newTotal[3].total += 1;
+    newTotal[3].total ++;
     newList[index].total += 300;
 
     setDrinksarray(newList);

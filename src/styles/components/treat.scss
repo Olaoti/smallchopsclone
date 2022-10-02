@@ -45,6 +45,19 @@
             &:hover{
                 background-color: rgb(232,222,204);
             }
+            &__filled{
+                background-color: $color-brown-mid;
+                color: white;
+                width: max-content;
+                font-size: 1.2rem;
+                border-radius: .5rem;
+                padding: .8rem 1.6rem;
+                cursor: pointer;
+                span{
+                    display: block;
+                    width: max-content;
+                }
+            }
         }
        } 
     }

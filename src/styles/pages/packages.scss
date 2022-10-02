@@ -179,9 +179,9 @@
             .drinks-box{
                 text-align: center;
             }
-            .package-drink{
-                z-index: 50;
-
+            .custom-drinks{
+                position: relative;
+                z-index: 20;
             }
         }
         &__content{
