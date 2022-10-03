@@ -27,17 +27,22 @@ const Checkout = () => {
     return newd.unit > 0;
   });
   const Checkoutlist = [...packages, ...drinks, ...Custompacklist];
-
+  const [newlist, setNewlist] = useState(Checkoutlist);
+  const removeitem = (index, pack) => {
+    setNewlist(newlist.filter((lis) => newlist.indexOf(lis) !== index));
+    console.log(newlist);
+    
+  };
   return (
     <div className="check">
       <Navbar />
       <div className="check__section">
         <div className="check__section__cart">
           <div className="cart-head">Cart</div>
-          {Checkoutlist?.map((pack, index) => {
+          {newlist?.map((pack, index) => {
             return (
               <div className="ordered-section" key={index}>
-                <div className="cancel">
+                <div className="cancel" onClick={() => removeitem(index, pack)}>
                   <span></span>
                   <span></span>
                 </div>

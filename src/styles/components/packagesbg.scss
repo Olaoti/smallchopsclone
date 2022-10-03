@@ -5,11 +5,13 @@
     height: 100%;
     overflow: hidden;
     div{
-        z-index: 1;
+        z-index: -1;
         position: absolute;
         img{
             height: 8vw;
             object-fit: contain;
+            position: relative;
+            z-index: 1;
         }
         &:nth-child(1){
             top: 3%;

@@ -80,11 +80,11 @@ const Packages = () => {
     <div className="packages package-section">
       <Navbar />
       <div className="arrows">
-        <div className="arrows-section">
-          <div className="arrow" onClick={addnumber}>
+        <div className="arrows-section ">
+          <div className="arrow noselect" onClick={addnumber}>
             <img src={arrow} alt="" />
           </div>
-          <div className="arrow" onClick={subtractnumber}>
+          <div className="arrow noselect" onClick={subtractnumber}>
             <div>
               <img src={arrow} alt="" />
             </div>
@@ -118,13 +118,16 @@ const Packages = () => {
                   </div>
                 </div>
                 <div
-                  className="sign minus"
+                  className="sign minus noselect"
                   onClick={() => minusquantity(index)}
                 >
                   -
                 </div>
                 <div className="quantity">{eachpack?.unit}</div>
-                <div className="sign plus" onClick={() => addquantity(index)}>
+                <div
+                  className="sign plus noselect"
+                  onClick={() => addquantity(index)}
+                >
                   +
                 </div>
                 <div className="cart">
