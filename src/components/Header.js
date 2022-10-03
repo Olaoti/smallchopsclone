@@ -209,7 +209,7 @@ const Header = () => {
     gsap.to(redpepperRef.current, {
       duration: 0.6,
       delay: 2.2,
-      left: "-10%",
+      left: "-20%",
       top: "30%",
     });
   }, [
