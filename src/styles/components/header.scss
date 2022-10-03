@@ -222,7 +222,7 @@
                 }
                 .redpepper{
                     height: 5rem;
-                    top:10%;
+                    top:2%;
                 }
                 .pepper{
                     height: 9rem;
@@ -234,6 +234,11 @@
 @media screen and (max-width:500px){
     .header{
         &__animation{
+            &__contents{
+                .chicken{
+                    height: 12rem;
+                }
+            }
             width: 84vw;
             .openup{
                 .leftopen, .rightopen{
