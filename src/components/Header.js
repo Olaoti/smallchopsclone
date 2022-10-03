@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import chicken from "../Assets/animationimg/chicken.png";
 import fries from "../Assets/animationimg/fries.png";
 import wings from "../Assets/animationimg/wings.png";
@@ -24,6 +25,7 @@ const Header = () => {
   const yellowpepperRef = useRef(null);
   const friesRef = useRef(null);
   const chickenRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
   /*Animation of the opened cover*/
   useEffect(() => {
     gsap.fromTo(
@@ -36,12 +38,13 @@ const Header = () => {
         borderBottom: "0vw solid rgb(238,238,238)",
         height: 0,
         duration: 0.8,
+        delay: 0.4,
       }
     );
     gsap.fromTo(
       covertipRef.current,
       { height: "2rem" },
-      { height: "0rem", duration: 0.8 }
+      { height: "0rem", duration: 0.8, delay: 0.4 }
     );
   }, [coverRef, covertipRef]);
   /*Animation of the closed cover*/
@@ -49,12 +52,12 @@ const Header = () => {
     gsap.fromTo(
       mainopenRef.current,
       { borderTop: "0vw solid rgb(238,238,238)" },
-      { borderTop: "5.2vw solid rgb(238,238,238)", duration: 1, delay: 0.7 }
+      { borderTop: "5.2vw solid rgb(238,238,238)", duration: 1, delay: 1.1 }
     );
     gsap.fromTo(
       opentipRef.current,
       { height: 0 },
-      { height: "20%", duration: 0.8, delay: 0.7 }
+      { height: "20%", duration: 0.8, delay: 1.1 }
     );
     gsap.fromTo(
       leftopenRef.current,
@@ -66,7 +69,7 @@ const Header = () => {
       {
         transform: " rotate(121deg) translateX(-3.6vw) translateY(-3.3vw)",
         duration: 0.8,
-        delay: 0.7,
+        delay: 1.1,
         height: "8.5vw",
         width: "1.3rem",
       }
@@ -81,7 +84,7 @@ const Header = () => {
       {
         transform: " rotate(-121deg) translateX(3.6vw) translateY(-3.3vw)",
         duration: 0.8,
-        delay: 0.7,
+        delay: 1.1,
         height: "8.5vw",
         width: "1.3rem",
       }
@@ -206,7 +209,7 @@ const Header = () => {
     gsap.to(redpepperRef.current, {
       duration: 0.6,
       delay: 2.2,
-      left: "-6%",
+      left: "-10%",
       top: "30%",
     });
   }, [

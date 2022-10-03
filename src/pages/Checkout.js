@@ -34,7 +34,6 @@ const Checkout = () => {
       <div className="check__section">
         <div className="check__section__cart">
           <div className="cart-head">Cart</div>
-
           {Checkoutlist?.map((pack, index) => {
             return (
               <div className="ordered-section" key={index}>

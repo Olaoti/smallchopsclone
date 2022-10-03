@@ -36,7 +36,7 @@ const Navbar = () => {
               <div>{Totalslist[3].total}</div>
             </div>
           </div>
-        </Link>
+        </Link>  
         <div className="menu" onClick={menuClick}>
           <span></span>
           <span></span>
