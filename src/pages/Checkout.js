@@ -7,31 +7,79 @@ import custompack from "../Assets/images/custompack.png";
 import Packageslist from "../components/Packageslist";
 import Drinkslist from "../components/Drinkslist";
 import Custompacklist from "../components/Custompacklist";
+import Totalslist from "../components/Totalslist";
+import Packages from "./Packages";
 
 const Checkout = () => {
-  const [customquantity, setCustomquantity] = useState(0);
-  const minusclick = (id) => {
-    if (customquantity > 0) {
-      setCustomquantity(customquantity - 1);
-    } else {
-      setCustomquantity(0);
-    }
-  };
-  const plusclick = () => {
-    setCustomquantity(customquantity + 1);
-  };
   const packages = Packageslist.filter((newp) => {
     return newp.unit > 0;
   });
   const drinks = Drinkslist.filter((newd) => {
     return newd.unit > 0;
   });
+  const [newpack, setNewpack] = useState(Packageslist);
+  const [newdrink, setNewdrink] = useState(Drinkslist);
+
   const Checkoutlist = [...packages, ...drinks, ...Custompacklist];
   const [newlist, setNewlist] = useState(Checkoutlist);
-  const removeitem = (index, pack) => {
+  /* for (var i = 0; i < newlist?.length - 1; i++) {
+    var newprice = totalprice;
+    newprice += newlist[i].price;
+    setTotalprice(newprice);
+  }*/
+  var newprice = newlist?.reduce((prev, next) => prev + next.total, 0);
+  var [totalprice, setTotalprice] = useState(newprice);
+
+  const plusclick = (pack) => {
+    Totalslist[3].total++;
+    setTotalprice((totalprice += pack.price));
+    if (Packageslist.includes(pack)) {
+      const packag = [...newpack];
+      packag[pack.id].unit++;
+      packag[pack.id].total += packag[pack.id].price;
+      setNewpack(packag);
+    } else if (Drinkslist.includes(pack)) {
+      const drink = [...newdrink];
+      drink[pack.id - 1].unit++;
+      drink[pack.id - 1].total += 300;
+      setNewdrink(drink);
+    }
+  };
+  const minusclick = (pack, index) => {
+    if (pack.unit > 0) {
+      Totalslist[3].total--;
+      setTotalprice((totalprice -= pack.price));
+      if (Packageslist.includes(pack)) {
+        const packag = [...newpack];
+        packag[pack.id].unit--;
+        packag[pack.id].total -= packag[pack.id].price;
+        setNewpack(packag);
+      } else if (Drinkslist.includes(pack)) {
+        const drink = [...newdrink];
+        drink[pack.id - 1].unit--;
+        drink[pack.id - 1].total -= 300;
+        setNewdrink(drink);
+      }
+    }
+    if (pack.unit === 0) {
+      setNewlist(newlist.filter((lis) => newlist.indexOf(lis) !== index));
+    }
+  };
+
+  const removeitem = (pack, index) => {
+    Totalslist[3].total -= pack.unit;
     setNewlist(newlist.filter((lis) => newlist.indexOf(lis) !== index));
-    console.log(newlist);
-    
+    if (Packageslist.includes(pack)) {
+      const packag = [...newpack];
+      packag[pack.id].unit = 0;
+      packag[pack.id].total = 0;
+      setNewpack(packag);
+    } else if (Drinkslist.includes(pack)) {
+      const drink = [...newdrink];
+      drink[pack.id - 1].unit = 0;
+      drink[pack.id - 1].total = 0;
+      setNewdrink(drink);
+    }
   };
   return (
     <div className="check">
@@ -52,18 +100,22 @@ const Checkout = () => {
                 <div className="orderedinfo">
                   <div className="name">{pack.dname || pack.pname}</div>
                   <div className="change-section">
-                    <div className="change point" onClick={minusclick}>
+                    <div
+                      className="change point"
+                      onClick={() => minusclick(pack, index)}
+                    >
                       -
                     </div>
                     <div className="zero">{pack.unit}</div>
-                    <div className="change point" onClick={plusclick}>
+                    <div
+                      className="change point"
+                      onClick={() => plusclick(pack)}
+                    >
                       +
                     </div>
                   </div>
                 </div>
-                <div className="price">
-                  ₦ {pack?.total || pack?.price * pack?.unit}
-                </div>
+                <div className="price">₦ {pack?.total}</div>
               </div>
             );
           })}
@@ -141,7 +193,7 @@ const Checkout = () => {
               </div>
               <div className="line"></div>
               <div className="text dark">
-                <div>100</div>
+                <div>₦ {totalprice}</div>
               </div>
             </div>
             <div className="textline">
@@ -150,7 +202,7 @@ const Checkout = () => {
               </div>
               <div className="line"></div>
               <div className="text dark">
-                <div>00</div>
+                <div>₦ 00</div>
               </div>
             </div>
             <div className="input">
@@ -166,7 +218,7 @@ const Checkout = () => {
               </div>
               <div className="line"></div>
               <div className="text dark">
-                <div>200</div>
+                <div>₦ {totalprice}</div>
               </div>
             </div>
           </div>

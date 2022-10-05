@@ -24,6 +24,7 @@ const Packageslist = [
     pimg: popcorn,
     price: 250,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Popcorn",
@@ -38,6 +39,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Vegetable Spring Rolls",
@@ -61,6 +63,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "beef samosas",
@@ -84,6 +87,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 950,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Puff puff",
@@ -117,6 +121,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 1500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Puff puff",
@@ -159,6 +164,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 2000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Mosa",
@@ -210,6 +216,7 @@ const Packageslist = [
     pimg: rolls,
     price: 2250,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Vegetable Spring Rolls",
@@ -224,6 +231,7 @@ const Packageslist = [
     pimg: samosapack,
     price: 2250,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: " Beef Samosas",
@@ -238,6 +246,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 3000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "BBQ Turkey (Large)",
@@ -255,6 +264,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 3000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Mosa",
@@ -301,6 +311,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 3000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "BBQ Turkey (Large)",
@@ -318,6 +329,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 3500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: " BBQ Chicken Cut (Full Lap)",
@@ -339,6 +351,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 3500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: " BBQ Chicken Cut (Full Lap)",
@@ -360,6 +373,7 @@ const Packageslist = [
     pimg: withlove,
     price: 5000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Puff puff",
@@ -387,6 +401,7 @@ const Packageslist = [
     pimg: treatbox,
     price: 5500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Puff puff",
@@ -421,6 +436,7 @@ const Packageslist = [
     pimg: treatbox,
     price: 8000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Mosa",
@@ -473,6 +489,7 @@ const Packageslist = [
     pimg: withlove,
     price: 10000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "puff puff",
@@ -499,6 +516,7 @@ const Packageslist = [
     pimg: contentbox,
     price: 10000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Puff puff",
@@ -532,6 +550,7 @@ const Packageslist = [
     pimg: contentbox,
     price: 12500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Puff puff",
@@ -574,6 +593,7 @@ const Packageslist = [
     pimg: contentbox,
     price: 15000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Mosa",
@@ -621,6 +641,7 @@ const Packageslist = [
     pimg: treatbox,
     price: 6500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Mosa",
@@ -668,6 +689,7 @@ const Packageslist = [
     pimg: prawnrolls,
     price: 5500,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Prawn Rolls (x5)",
@@ -682,6 +704,7 @@ const Packageslist = [
     pimg: withlovesm,
     price: 6000,
     unit: 0,
+    total: 0,
     content: [
       {
         cname: "Grilled Croaker (Full)",

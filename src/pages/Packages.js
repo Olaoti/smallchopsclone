@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Packageslist from "../components/Packageslist";
 import cartwhite from "../Assets/cart-icon-white.svg";
@@ -61,6 +61,7 @@ const Packages = () => {
     const newList = [...list];
     const newTotal = [...Totals];
     newList[index].unit++;
+    newList[index].total += newList[index].price;
     newTotal[3].total++;
 
     setList(newList);
@@ -71,6 +72,7 @@ const Packages = () => {
     const newTotal = [...Totals];
     if (newList[index].unit > 0) {
       newList[index].unit--;
+      newList[index].total -= newList[index].price;
       newTotal[3].total--;
     }
     setList(newList);
@@ -131,7 +133,9 @@ const Packages = () => {
                   +
                 </div>
                 <div className="cart">
-                  <img src={cartwhite} alt="" />
+                  <Link to="/checkout" className="link">
+                    <img src={cartwhite} alt="" />
+                  </Link>
                 </div>
               </div>
               <div className="custom-drinks bigscreen">
@@ -171,7 +175,9 @@ const Packages = () => {
                 <div className="checkquestion">
                   Done Selecting your package?
                 </div>
-                <div className="btn">Checkout</div>
+                <Link to="/checkout" className="link">
+                  <div className="btn">Checkout</div>
+                </Link>
               </div>
             </div>
           </div>
